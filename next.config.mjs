@@ -1,7 +1,13 @@
+import createMDX from '@next/mdx';
 import redirects from './data/redirects.ts';
+
+const withMDX = createMDX({
+	extension: /\.(md|mdx)$/
+});
 
 const nextConfig = {
 	reactStrictMode: true,
+	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 	experimental: {
 		scrollRestoration: true
 	},
@@ -26,4 +32,4 @@ const nextConfig = {
 	}
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);
