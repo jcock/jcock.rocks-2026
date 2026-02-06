@@ -1,8 +1,4 @@
-import type {
-	ComponentPropsWithoutRef,
-	ComponentType,
-	ReactNode
-} from 'react';
+import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from 'react';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -33,7 +29,10 @@ const Table = ({ data }: TableProps) => {
 	const rows = data.rows.map((row, rowIndex) => (
 		<tr key={`row-${rowIndex}`}>
 			{row.map((cell, cellIndex) => (
-				<td key={`cell-${rowIndex}-${cellIndex}`} className="border border-border px-3 py-2">
+				<td
+					key={`cell-${rowIndex}-${cellIndex}`}
+					className="border border-border px-3 py-2"
+				>
 					{cell}
 				</td>
 			))}

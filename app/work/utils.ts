@@ -29,10 +29,7 @@ const parseFrontmatter = (fileContent: string) => {
 
 	const frontmatterBlock = match[1] || '';
 	const content = fileContent.replace(frontmatterRegex, '').trim();
-	const frontmatterLines = frontmatterBlock
-		.trim()
-		.split('\n')
-		.filter(Boolean);
+	const frontmatterLines = frontmatterBlock.trim().split('\n').filter(Boolean);
 	const metadata: Partial<WorkSampleMetadata> = {};
 
 	for (const line of frontmatterLines) {
