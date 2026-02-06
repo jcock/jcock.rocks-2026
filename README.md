@@ -88,7 +88,8 @@ npm run build
 
 ## UI Documentation
 
-See `docs/components/ui-components.md` for the compound form API, masking, and the new Base UI wrappers.
+See `docs/components/ui-components.md` for the compound form API,
+masking, and the new Base UI wrappers.
 
 ### Run production build
 
