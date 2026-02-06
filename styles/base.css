@@ -4,7 +4,7 @@
 	}
 
 	html {
-		@apply font-sans text-425 bg-background text-foreground scroll-smooth;
+		@apply font-sans text-450 bg-background text-foreground scroll-smooth;
 	}
 
 	::selection {
