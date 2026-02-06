@@ -11,7 +11,7 @@
 		"manifest": {
 			"backgroundColor": "#fff",
 			"themeColor": "#fff",
-			"tileColor": "#0d0d0d"
+			"tileColor": "#fff"
 		}
 	},
 	"analytics": {
