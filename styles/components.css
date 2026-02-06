@@ -1,3 +1,28 @@
 :root {
 	--swiper-navigation-color: transparent;
 }
+
+/* Sugar High token colors */
+.shj-keyword {
+	color: #0b79d0;
+}
+
+.shj-string {
+	color: #207547;
+}
+
+.shj-number {
+	color: #6a34b7;
+}
+
+.shj-comment {
+	color: #6b7280;
+	font-style: italic;
+}
+
+.shj-function,
+.shj-class,
+.shj-property,
+.shj-identifier {
+	color: #0f172a;
+}
