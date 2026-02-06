@@ -6,11 +6,7 @@ import site from '~/data/site.json';
 
 import Horns from '~/images/inline/horns.svg';
 
-type NavbarProps = {
-	isPinned: boolean;
-};
-
-const Navbar = ({ isPinned }: NavbarProps) => {
+const Navbar = () => {
 	return (
 		<div className="bg-background border-b border-border">
 			<div className="flex flex-wrap items-center justify-between py-2 px-4 container">
