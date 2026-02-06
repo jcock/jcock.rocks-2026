@@ -1,3 +1,5 @@
+'use client';
+
 import type { ComponentProps } from 'react';
 import { Icon } from '@iconify-icon/react';
 import { twMerge } from 'tailwind-merge';

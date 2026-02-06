@@ -1,3 +1,5 @@
+'use client';
+
 import type { ComponentProps, ElementType, ReactNode } from 'react';
 import { InView } from 'react-intersection-observer';
 

@@ -1,3 +1,5 @@
+'use client';
+
 import type { ComponentPropsWithoutRef } from 'react';
 import { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';

@@ -1,17 +1,25 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-import Layout from '~/components/layout/layout';
-import PageHead from '~/components/util/page-head';
+import StructuredData from '~/components/util/structured-data';
 import { Button } from '~/components/modules/core/button';
-
 import { RouteGroups } from '~/lib/utils';
+import { buildPageMetadata, buildWebPageStructuredData } from '~/lib/seo';
+
+export const metadata: Metadata = buildPageMetadata({
+	title: '404: Not found'
+});
 
 const NotFoundPage = () => {
 	const errorRoutes = RouteGroups('error');
+	const structuredData = buildWebPageStructuredData({
+		pathname: '/404',
+		title: '404: Not found'
+	});
 
 	return (
-		<Layout>
-			<PageHead title="404: Not found" />
+		<>
+			<StructuredData data={structuredData} />
 
 			<section className="relative min-h-[50vh] md:min-h-[70vh] pt-[10vh] pb-12 overflow-clip bg-muted">
 				<div className="relative z-10 container px-4 text-center">
@@ -41,7 +49,7 @@ const NotFoundPage = () => {
 					</nav>
 				</div>
 			</section>
-		</Layout>
+		</>
 	);
 };
 

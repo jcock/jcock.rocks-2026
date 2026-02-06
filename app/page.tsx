@@ -1,16 +1,20 @@
 import Link from 'next/link';
 
-import Layout from '~/components/layout/layout';
-import PageHead from '~/components/util/page-head';
+import StructuredData from '~/components/util/structured-data';
 import Jumbotron from '~/components/modules/jumbotron';
-import Section from '~/components/modules/section';
+import Section, { SectionTitle } from '~/components/modules/section';
 import { Button } from '~/components/modules/core/button';
 import Icon from '~/components/modules/icon';
+import { buildWebPageStructuredData } from '~/lib/seo';
 
-const Home = () => {
+const HomePage = () => {
+	const structuredData = buildWebPageStructuredData({
+		pathname: '/'
+	});
+
 	return (
-		<Layout>
-			<PageHead title="" />
+		<>
+			<StructuredData data={structuredData} />
 
 			<Jumbotron>
 				<Jumbotron.Body>
@@ -19,7 +23,7 @@ const Home = () => {
 			</Jumbotron>
 
 			<Section id="intro" className="container px-4 my-20 text-center">
-				<Section.Title>Hello, world!</Section.Title>
+				<SectionTitle>Hello, world!</SectionTitle>
 				<p className="max-w-lg mx-auto text-balance">
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
 					dolor inventore deserunt, perferendis asperiores quibusdam
@@ -28,7 +32,7 @@ const Home = () => {
 			</Section>
 
 			<Section id="alpha" className="container px-4 my-12">
-				<Section.Title>Alpha</Section.Title>
+				<SectionTitle>Alpha</SectionTitle>
 				<p>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit.{' '}
 					<Button
@@ -38,7 +42,8 @@ const Home = () => {
 						nativeButton={false}
 						render={
 							<Link href="/">
-								Placeat dolor <Icon icon="fa-brands:instagram" />
+								Placeat dolor{' '}
+								<Icon icon="fa-brands:instagram" className="fill-black" />
 							</Link>
 						}
 					/>{' '}
@@ -77,7 +82,7 @@ const Home = () => {
 			</Section>
 
 			<Section id="beta" className="container px-4 my-12">
-				<Section.Title>Beta</Section.Title>
+				<SectionTitle>Beta</SectionTitle>
 				<p>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit.{' '}
 					<Button
@@ -124,8 +129,8 @@ const Home = () => {
 					qui blanditiis alias officiis dolore eaque expedita?
 				</p>
 			</Section>
-		</Layout>
+		</>
 	);
 };
 
-export default Home;
+export default HomePage;

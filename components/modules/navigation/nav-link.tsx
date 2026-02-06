@@ -1,6 +1,8 @@
+'use client';
+
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { forwardRef } from 'react';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 const NavLink = ({ children }: { children?: ReactNode }) => {
@@ -26,10 +28,10 @@ export const Anchor = ({
 	partiallyActive = false,
 	...rest
 }: AnchorProps) => {
-	const router = useRouter();
+	const pathname = usePathname();
 	const isActive =
-		(activeClassName && router.pathname === href) ||
-		(router.pathname.startsWith(`${href}/`) && partiallyActive);
+		(activeClassName && pathname === href) ||
+		(pathname.startsWith(`${href}/`) && partiallyActive);
 
 	return (
 		<Link

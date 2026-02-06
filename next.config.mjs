@@ -5,10 +5,6 @@ const nextConfig = {
 	experimental: {
 		scrollRestoration: true
 	},
-	i18n: {
-		locales: ['en-US'],
-		defaultLocale: 'en-US'
-	},
 	async redirects() {
 		return redirects;
 	},

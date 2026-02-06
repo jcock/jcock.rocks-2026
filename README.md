@@ -20,18 +20,17 @@ Senior Designer/Developer
 ## Directory Layout
 
 ```shell
+├── /app/                       # App Router routes
 ├── /components/                # Components
 ├── /data/                      # Site data
 ├── /hooks/                     # Custom hooks
 ├── /images/                    # Images
 ├── /public/                    # Static assets
-├── /pages/                     # Pages
 ├── /styles/                    # Styles
 ├── /types/                     # Types
 ├── /.env.*                     # Environment variables
-├── /next-config.js             # Next.js configuration
+├── /next.config.mjs            # Next.js configuration
 ├── /postcss.config.js          # PostCSS config
-├── /tailwind.config.js         # Tailwind config
 ```
 
 ---

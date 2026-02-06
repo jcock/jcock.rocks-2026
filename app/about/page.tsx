@@ -1,16 +1,14 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-import Layout from '~/components/layout/layout';
-import PageHead from '~/components/util/page-head';
+import StructuredData from '~/components/util/structured-data';
 import Jumbotron from '~/components/modules/jumbotron';
-import Section from '~/components/modules/section';
+import Section, { SectionTitle } from '~/components/modules/section';
 import {
 	Card,
-	CardAction,
 	CardContent,
 	CardDescription,
 	CardFooter,
-	CardHeader,
 	CardImage,
 	CardTitle
 } from '~/components/modules/core/card';
@@ -24,14 +22,24 @@ import {
 	AccordionTrigger
 } from '~/components/modules/core/accordion';
 import { Button } from '~/components/modules/core/button';
+import { buildPageMetadata, buildWebPageStructuredData } from '~/lib/seo';
 
 import JumbotronFpoImage from '~/images/jumbotron/fpo.png';
 import FpoImage from '~/images/fpo.png';
 
+export const metadata: Metadata = buildPageMetadata({
+	title: 'About'
+});
+
 const AboutPage = () => {
+	const structuredData = buildWebPageStructuredData({
+		pathname: '/about',
+		title: 'About'
+	});
+
 	return (
-		<Layout>
-			<PageHead title="About" />
+		<>
+			<StructuredData data={structuredData} />
 
 			<Jumbotron>
 				<Jumbotron.Body>
@@ -41,7 +49,7 @@ const AboutPage = () => {
 			</Jumbotron>
 
 			<Section id="alpha" className="container px-4 my-20">
-				<Section.Title>Alpha</Section.Title>
+				<SectionTitle>Alpha</SectionTitle>
 
 				<Dialog
 					title="Dialog Title"
@@ -98,7 +106,7 @@ const AboutPage = () => {
 			</Section>
 
 			<Section id="beta" className="container px-4 my-20">
-				<Section.Title>Beta</Section.Title>
+				<SectionTitle>Beta</SectionTitle>
 				<Accordion defaultValue={['item-1']}>
 					<AccordionItem value="item-1">
 						<AccordionTrigger>Item 1</AccordionTrigger>
@@ -144,7 +152,7 @@ const AboutPage = () => {
 					</AccordionItem>
 				</Accordion>
 			</Section>
-		</Layout>
+		</>
 	);
 };
 
