@@ -1,6 +1,6 @@
-const redirects = require('./data/redirects.ts');
+import redirects from './data/redirects.ts';
 
-module.exports = {
+const nextConfig = {
 	reactStrictMode: true,
 	experimental: {
 		scrollRestoration: true
@@ -29,3 +29,5 @@ module.exports = {
 		return config;
 	}
 };
+
+export default nextConfig;
