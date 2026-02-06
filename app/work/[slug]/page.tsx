@@ -16,7 +16,7 @@ type WorkSamplePageProps = {
 
 const metadataFromSample = (metadata: WorkSampleMetadata): Metadata => {
 	return {
-		title: metadata.title,
+		title: `${metadata.title} | Work`,
 		description: metadata.summary || undefined
 	};
 };
