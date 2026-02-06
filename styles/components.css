@@ -11,6 +11,19 @@
 	--sh-comment: #a19595;
 }
 
+/* Sugar High syntax highlighting line numbers */
+pre {
+	counter-reset: sh-line-number;
+
+	& .sh__line::before {
+		counter-increment: sh-line-number 1;
+		content: counter(sh-line-number);
+		margin-right: 24px;
+		text-align: right;
+		color: #a4a4a4;
+	}
+}
+
 /* Prose classes */
 .prose {
 	--tw-prose-body: currentColor;
@@ -24,7 +37,7 @@
 	--tw-prose-captions: currentColor;
 	--tw-prose-code: currentColor;
 	--tw-prose-pre-code: currentColor;
-	--tw-prose-pre-bg: #f1f5f9;
+	--tw-prose-pre-bg: oklch(96.7% 0.003 264.542);
 	--tw-prose-th-borders: currentColor;
 	--tw-prose-td-borders: currentColor;
 }
