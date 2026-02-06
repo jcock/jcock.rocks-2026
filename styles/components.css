@@ -1,28 +1,30 @@
 :root {
 	--swiper-navigation-color: transparent;
+	--sh-identifier: #354150;
+	--sh-keyword: #f47067;
+	--sh-string: #00a99a;
+	--sh-class: #8d85ff;
+	--sh-property: #4e8fdf;
+	--sh-entity: #6eafad;
+	--sh-jsxliterals: #bf7db6;
+	--sh-sign: #8996a3;
+	--sh-comment: #a19595;
 }
 
-/* Sugar High token colors */
-.shj-keyword {
-	color: #0b79d0;
-}
-
-.shj-string {
-	color: #207547;
-}
-
-.shj-number {
-	color: #6a34b7;
-}
-
-.shj-comment {
-	color: #6b7280;
-	font-style: italic;
-}
-
-.shj-function,
-.shj-class,
-.shj-property,
-.shj-identifier {
-	color: #0f172a;
+/* Prose classes */
+.prose {
+	--tw-prose-body: currentColor;
+	--tw-prose-headings: currentColor;
+	--tw-prose-lead: currentColor;
+	--tw-prose-links: currentColor;
+	--tw-prose-bold: currentColor;
+	--tw-prose-counters: currentColor;
+	--tw-prose-hr: currentColor;
+	--tw-prose-quotes: currentColor;
+	--tw-prose-captions: currentColor;
+	--tw-prose-code: currentColor;
+	--tw-prose-pre-code: currentColor;
+	--tw-prose-pre-bg: #f1f5f9;
+	--tw-prose-th-borders: currentColor;
+	--tw-prose-td-borders: currentColor;
 }
