@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 
 import StructuredData from '~/components/util/structured-data';
 import { Button } from '~/components/modules/core/button';
-import { RouteGroups } from '~/lib/utils';
 import { buildPageMetadata, buildWebPageStructuredData } from '~/lib/seo';
 
 export const metadata: Metadata = buildPageMetadata({
@@ -11,7 +10,6 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 const NotFoundPage = () => {
-	const errorRoutes = RouteGroups('error');
 	const structuredData = buildWebPageStructuredData({
 		pathname: '/404',
 		title: '404: Not found'
@@ -37,15 +35,6 @@ const NotFoundPage = () => {
 							nativeButton={false}
 							render={<Link href="/">Home</Link>}
 						/>
-						{errorRoutes.map(route => (
-							<Button
-								key={route.slug}
-								variant="link"
-								hasUnderline
-								nativeButton={false}
-								render={<Link href={route.slug}>{route.title}</Link>}
-							/>
-						))}
 					</nav>
 				</div>
 			</section>
