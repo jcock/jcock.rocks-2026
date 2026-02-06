@@ -1,0 +1,15 @@
+@utility container {
+	@apply mx-auto xl:max-w-5xl;
+}
+
+@utility track {
+	& * {
+		@apply pointer-events-none;
+	}
+}
+
+@utility stretched-link {
+	&::after {
+		@apply content-[''] absolute inset-0 z-1 pointer-events-auto bg-transparent;
+	}
+}

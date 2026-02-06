@@ -1,0 +1,49 @@
+{
+	"title": "Jason Cockerham 🤘 Designer and Developer",
+	"titleShort": "Jason Cockerham",
+	"description": "The portfolio of Jason Cockerham, Senior Designer/Developer.",
+	"author": "@jcock",
+	"url": "https://jcock.rocks.netlify.app",
+	"logo": "favicon.svg",
+	"shareImage": "share.png",
+	"colors": {
+		"progress": "#0d0d0d",
+		"manifest": {
+			"backgroundColor": "#fff",
+			"themeColor": "#fff",
+			"tileColor": "#0d0d0d"
+		}
+	},
+	"analytics": {
+		"gtmId": ""
+	},
+	"social": [
+		{
+			"platform": "GitHub",
+			"label": "Follow me on GitHub",
+			"url": "https://github.com/jcock",
+			"icon": "fa7-brands:github"
+		},
+		{
+			"platform": "LinkedIn",
+			"label": "Follow me on LinkedIn",
+			"url": "http://www.linkedin.com/in/jasoncockerham",
+			"icon": "fa7-brands:linkedin-in"
+		},
+		{
+			"platform": "Twitter",
+			"label": "Follow me on X",
+			"url": "https://x.com/jcock",
+			"icon": "fa7-brands:x-twitter"
+		},
+		{
+			"platform": "Instagram",
+			"label": "Follow me on instagram",
+			"url": "https://www.instagram.com/jc0ck",
+			"icon": "fa7-brands:instagram"
+		}
+	],
+	"copyright": {
+		"name": "Jason Cockerham"
+	}
+}

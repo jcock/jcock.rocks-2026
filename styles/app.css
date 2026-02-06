@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+/* Tailwind Plugins/Imports */
+@plugin '@tailwindcss/aspect-ratio';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@plugin 'tailwindcss-quantity-queries';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+/* Global */
+@import './theme.css';
+@import './base.css';
+@import './components.css';
+@import './utilities.css';
