@@ -19,18 +19,18 @@ const NotFoundPage = () => {
 		<>
 			<StructuredData data={structuredData} />
 
-			<section className="relative min-h-[50vh] md:min-h-[70vh] pt-[10vh] pb-12 overflow-clip bg-muted">
+			<section className="relative grid place-items-center min-h-dvh py-12 overflow-clip bg-foreground text-white">
 				<div className="relative z-10 container px-4 text-center">
-					<h1 className="text-[clamp(3.34rem,25vw,23rem)] leading-tight font-extrabold text-pretty uppercase text-primary/30">
+					<h1 className="text-[clamp(3.34rem,25vw,23rem)] leading-tight font-extrabold text-pretty uppercase text-background/30">
 						Oops
 					</h1>
 					<p className="mb-8 text-lg md:text-xl lg:text-2xl font-bold text-pretty">
 						This page could not be found
 					</p>
 
-					<nav className="max-w-xl mx-auto flex flex-wrap justify-center gap-4 font-semibold">
+					<nav className="max-w-xl mx-auto flex flex-wrap justify-center gap-4 font-semibold font-sans">
 						<Button
-							variant="link"
+							variant="link-light"
 							hasUnderline
 							nativeButton={false}
 							render={<Link href="/">Home</Link>}
