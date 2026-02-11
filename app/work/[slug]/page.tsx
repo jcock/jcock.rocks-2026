@@ -4,9 +4,9 @@ import { notFound } from 'next/navigation';
 import { CustomMDX } from '~/components/modules/mdx';
 import {
 	getWorkSampleBySlug,
-	getWorkSampleSlugs,
-	type WorkSampleMetadata
-} from '~/app/work/utils';
+	getWorkSampleSlugs
+} from '~/app/work/server-utils';
+import type { WorkSampleMetadata } from '~/app/work/types';
 
 type WorkSamplePageProps = {
 	params: Promise<{

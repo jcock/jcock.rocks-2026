@@ -11,12 +11,12 @@ import Icon from '~/components/modules/icon';
 import { useScrollDirection } from '~/hooks/useScrollDirection';
 import { fadeItemVariants } from '~/components/util/animations';
 
-interface SectionSectionAbout {
+interface SectionAboutProps {
 	id?: string;
 	className?: string;
 }
 
-const SectionAbout = ({ id = 'about', className }: SectionSectionAbout) => {
+const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 	const scrollDirection = useScrollDirection();
 
 	const containerVariants: Variants = {
@@ -33,7 +33,7 @@ const SectionAbout = ({ id = 'about', className }: SectionSectionAbout) => {
 			variants={containerVariants}
 			initial="hidden"
 			whileInView="show"
-			viewport={{ once: false, amount: 0.35 }}
+			viewport={{ once: false, amount: 0.4 }}
 		>
 			<Section
 				id={id}

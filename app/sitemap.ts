@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import site from '~/data/site.json';
-import { getWorkSamples } from '~/app/work/utils';
+import { getWorkSamples } from '~/app/work/server-utils';
 
 const withNoTrailingSlash = (value: string) => value.replace(/\/+$/, '');
 
