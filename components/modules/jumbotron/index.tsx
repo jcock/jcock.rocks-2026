@@ -1,4 +1,5 @@
-import type { HTMLAttributes, ReactElement, ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
+import { forwardRef } from 'react';
 import Image, { type StaticImageData } from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
@@ -7,19 +8,24 @@ type JumbotronProps = HTMLAttributes<HTMLElement> & {
 	children?: ReactNode;
 };
 
-const Jumbotron = ({ className, children, ...rest }: JumbotronProps) => {
-	return (
-		<section
-			className={twMerge(
-				'relative grid grid-cols-1 auto-rows-min md:grid-rows-1 overflow-hidden bg-gray-800 text-white',
-				className ?? ''
-			)}
-			{...rest}
-		>
-			{children}
-		</section>
-	);
-};
+const Jumbotron = forwardRef<HTMLElement, JumbotronProps>(
+	({ className, children, ...rest }, ref) => {
+		return (
+			<section
+				ref={ref}
+				className={twMerge(
+					'relative grid grid-cols-1 grid-rows-1 overflow-hidden bg-foreground text-background',
+					className ?? ''
+				)}
+				{...rest}
+			>
+				{children}
+			</section>
+		);
+	}
+);
+
+Jumbotron.displayName = 'Jumbotron';
 
 type JumbotronBodyProps = HTMLAttributes<HTMLDivElement> & {
 	children?: ReactNode;
@@ -33,7 +39,7 @@ export const JumbotronBody = ({
 	return (
 		<div
 			className={twMerge(
-				'md:row-span-full col-span-full grid place-content-center relative z-10 container p-4',
+				'md:row-span-full col-span-full grid relative z-10 container p-4',
 				className ?? ''
 			)}
 			{...rest}
@@ -55,7 +61,7 @@ export const JumbotronTitle = ({
 	return (
 		<h1
 			className={twMerge(
-				'text-2xl md:text-3xl font-bold text-pretty',
+				'text-2xl sm:text-4xl font-bold text-pretty',
 				className ?? ''
 			)}
 			{...rest}
@@ -105,7 +111,7 @@ export const JumbotronImage = ({
 	);
 };
 
-type JumbotronCompound = ((props: JumbotronProps) => ReactElement | null) & {
+type JumbotronCompound = typeof Jumbotron & {
 	Body: typeof JumbotronBody;
 	Title: typeof JumbotronTitle;
 	Image: typeof JumbotronImage;

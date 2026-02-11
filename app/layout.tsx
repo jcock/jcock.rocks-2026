@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
 import { siteMetadata, siteViewport } from '~/lib/seo';
-import { inter } from '~/styles/fonts';
+import { inter, notoSerif } from '~/styles/fonts';
 import site from '~/data/site.json';
 import '~/styles/app.css';
 
@@ -21,7 +21,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
 
 	return (
 		<html lang="en-US">
-			<body className={inter.variable}>
+			<body className={`${inter.variable} ${notoSerif.variable}`}>
 				{gtmId && process.env.NODE_ENV === 'production' ? (
 					<Script id="google-tag-manager" strategy="afterInteractive">
 						{`

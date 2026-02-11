@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import * as React from 'react';
 
 type ScrollDirection = 'up' | 'down';
 
 export const useScrollDirection = (): ScrollDirection => {
 	const threshold = 1;
-	const [scrollDir, setScrollDir] = useState<ScrollDirection>('up');
+	const [scrollDir, setScrollDir] = React.useState<ScrollDirection>('up');
 
-	useEffect(() => {
+	React.useEffect(() => {
 		let previousScrollYPosition = window.scrollY;
 
 		const scrolledMoreThanThreshold = (currentScrollYPosition: number) =>

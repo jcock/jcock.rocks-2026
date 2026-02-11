@@ -36,6 +36,7 @@
 @theme inline {
 	/* Fonts */
 	--font-sans: 'Inter', var(--font-fallback-sans);
+	--font-serif: 'Noto Serif', var(--font-fallback-serif);
 }
 
 /* Shadcn theme variables */
@@ -90,10 +91,10 @@
 	--card-foreground: var(--color-gray-850);
 	--popover: var(--color-gray-25);
 	--popover-foreground: var(--color-gray-850);
-	--primary: var(--color-sky-550);
-	--primary-foreground: oklch(0.97 0.014 254.604);
-	--secondary: var(--color-gray-25);
-	--secondary-foreground: var(--color-gray-850);
+	--primary: var(--color-gray-850);
+	--primary-foreground: var(--color-gray-25);
+	--secondary: var(--color-sky-550);
+	--secondary-foreground: var(--color-gray-25);
 	--muted: var(--color-gray-25);
 	--muted-foreground: oklch(0.556 0 0);
 	--accent: var(--color-gray-25);

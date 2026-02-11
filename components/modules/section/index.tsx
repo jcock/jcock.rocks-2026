@@ -62,7 +62,7 @@ export const SectionTitle = ({
 
 	return (
 		<Heading
-			className={`mb-4 text-xl md:text-2xl text-pretty ${className ?? ''}`}
+			className={`mb-4 text-2xl md:text-3xl text-pretty ${className ?? ''}`}
 		>
 			{children}
 		</Heading>

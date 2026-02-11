@@ -20,7 +20,7 @@ const GridBase = forwardRef<HTMLDivElement, GridProps>(
 			className,
 			autoRows = true,
 			columns = 'md:grid-cols-2',
-			gap = 'gap-12 lg:gap-16',
+			gap = 'gap-8 lg:gap-12',
 			...rest
 		},
 		ref
