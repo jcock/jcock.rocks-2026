@@ -70,7 +70,7 @@ const Footer = () => {
 				</motion.div>
 			</Grid>
 
-			<p className="absolute bottom-4 inset-x-0 px-4 text-2xs text-muted-foreground/50 text-center">
+			<p className="absolute bottom-4 inset-x-0 px-4 text-2xs text-muted-foreground/50 text-center tabular-nums">
 				© {new Date().getFullYear()}. {copyright.name}
 			</p>
 		</motion.footer>
