@@ -86,7 +86,7 @@ const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 								nativeButton={false}
 								render={
 									<a
-										href="https://abccreative.com"
+										href="/documents/Jason.Cockerham_Designer_Developer_Resume.pdf"
 										target="_blank"
 										rel="noopener noreferrer"
 									>

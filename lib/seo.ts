@@ -59,7 +59,13 @@ export const siteMetadata: Metadata = {
 			},
 			{
 				url: '/favicon.ico',
-				sizes: 'any'
+				sizes: 'any',
+				media: '(prefers-color-scheme: light)'
+			},
+			{
+				url: '/favicon-light.ico',
+				sizes: 'any',
+				media: '(prefers-color-scheme: dark)'
 			}
 		],
 		apple: '/apple-touch-icon.png'
