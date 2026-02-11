@@ -72,15 +72,33 @@ const SectionWork = ({ id = 'work', className, samples }: SectionWorkProps) => {
 									{[
 										{
 											name: 'Webby Award',
-											image: <AwardWebby className="w-18 md:w-24 mx-auto" />
+											image: (
+												<AwardWebby
+													role="img"
+													aria-hidden="true"
+													className="w-18 md:w-24 mx-auto"
+												/>
+											)
 										},
 										{
 											name: 'American Advertising Award',
-											image: <AwardAaa className="w-16 md:w-22 mx-auto" />
+											image: (
+												<AwardAaa
+													role="img"
+													aria-hidden="true"
+													className="w-16 md:w-22 mx-auto"
+												/>
+											)
 										},
 										{
 											name: 'Webaward',
-											image: <AwardWebAward className="w-14 md:w-20 mx-auto" />
+											image: (
+												<AwardWebAward
+													role="img"
+													aria-hidden="true"
+													className="w-14 md:w-20 mx-auto"
+												/>
+											)
 										}
 									].map(award => (
 										<List.Item

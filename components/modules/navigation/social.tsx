@@ -14,7 +14,7 @@ const NavSocial = () => {
 	const socials = site.social as SocialLink[];
 
 	return (
-		<nav className="flex justify-self-end gap-3">
+		<nav className="flex items-center justify-between md:justify-self-center gap-3 md:w-2/3 py-[2.5vh] px-4 border-t border-border">
 			{socials.map(social => (
 				<Button
 					key={social.platform}
@@ -22,9 +22,9 @@ const NavSocial = () => {
 					size="icon"
 					nativeButton={false}
 					render={
-						<a href={social.url} rel="noreferrer">
+						<a href={social.url} target="_blank" rel="noreferrer noopener">
 							<span className="sr-only">{social.label}</span>
-							<Icon icon={social.icon} />
+							<Icon icon={social.icon} size="size-5" />
 						</a>
 					}
 				/>

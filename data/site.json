@@ -25,6 +25,12 @@
 			"icon": "fa7-brands:github"
 		},
 		{
+			"platform": "Dribbble",
+			"label": "Follow me on Dribbble",
+			"url": "https://dribbble.com/jcock",
+			"icon": "fa7-brands:dribbble"
+		},
+		{
 			"platform": "LinkedIn",
 			"label": "Follow me on LinkedIn",
 			"url": "http://www.linkedin.com/in/jasoncockerham",
