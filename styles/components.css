@@ -41,3 +41,55 @@ pre {
 	--tw-prose-th-borders: currentColor;
 	--tw-prose-td-borders: currentColor;
 }
+
+/* jcock letters logo */
+.jcock-letters--container {
+	.jcock-letters {
+		opacity: 0.5;
+	}
+
+	.jcock-letters_svg__o,
+	.jcock-letters_svg__c2,
+	.jcock-letters_svg__k {
+		opacity: 0;
+		transform: translateY(10%);
+		transition:
+			opacity 100ms var(--ease-primary),
+			transform 100ms var(--ease-primary);
+	}
+
+	.jcock-letters_svg__o {
+		transition-delay: 100ms;
+	}
+
+	.jcock-letters_svg__c2 {
+		transition-delay: 75ms;
+	}
+
+	.jcock-letters_svg__k {
+		transition-delay: 0;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		.jcock-letters {
+			opacity: 1;
+		}
+
+		.jcock-letters_svg__o,
+		.jcock-letters_svg__c2,
+		.jcock-letters_svg__k {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.jcock-letters_svg__o {
+			transition-delay: 0;
+		}
+
+		.jcock-letters_svg__k {
+			transition-delay: 100ms;
+		}
+	}
+}
