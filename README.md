@@ -14,6 +14,7 @@ Senior Designer/Developer
 
 ![Repo Size](https://img.shields.io/github/repo-size/badges/shields.svg?style=for-the-badge)
 [![License: 0BSD](https://img.shields.io/badge/license-0BSD-blue.svg?style=for-the-badge)](http://unlicense.org/)
+[![Netlify Status](https://img.shields.io/netlify/2eaf954e-9e5c-4fbf-841a-ad1bfd9c4260?style=for-the-badge&logo=netlify)](https://app.netlify.com/projects/delawarehivweb/deploys)
 
 ---
 
