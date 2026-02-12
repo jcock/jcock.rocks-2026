@@ -12,7 +12,6 @@
 	},
 	"iconLibrary": "phosphor",
 	"aliases": {
-		"~/*": ["./*"],
 		"components": "~/components",
 		"utils": "~/lib/utils",
 		"ui": "~/components/modules/core",
