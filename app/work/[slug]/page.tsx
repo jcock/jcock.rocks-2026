@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import type { ComponentType } from 'react';
 
-import { CustomMDX } from '~/components/modules/mdx';
 import {
 	getWorkSampleBySlug,
 	getWorkSampleSlugs
@@ -19,6 +19,22 @@ const metadataFromSample = (metadata: WorkSampleMetadata): Metadata => {
 		title: `${metadata.title} | Work`,
 		description: metadata.summary || undefined
 	};
+};
+
+type WorkSampleModule = {
+	default: ComponentType<Record<string, never>>;
+};
+
+const loadWorkSampleComponent = async (slug: string) => {
+	try {
+		const module = (await import(
+			/* webpackInclude: /\.mdx$/ */
+			`../samples/${slug}.mdx`
+		)) as WorkSampleModule;
+		return module.default;
+	} catch {
+		return null;
+	}
 };
 
 export const generateStaticParams = async () => {
@@ -43,12 +59,13 @@ export const generateMetadata = async ({
 const WorkSamplePage = async ({ params }: WorkSamplePageProps) => {
 	const { slug } = await params;
 	const sample = getWorkSampleBySlug(slug);
+	const SampleContent = await loadWorkSampleComponent(slug);
 
-	if (!sample) {
+	if (!sample || !SampleContent) {
 		notFound();
 	}
 
-	return <CustomMDX source={sample.content} />;
+	return <SampleContent />;
 };
 
 export default WorkSamplePage;

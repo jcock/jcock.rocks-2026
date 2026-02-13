@@ -1,3 +1,4 @@
+import createMDX from '@next/mdx';
 import redirects from './data/redirects.ts';
 
 const svgAsComponentRule = {
@@ -5,8 +6,16 @@ const svgAsComponentRule = {
 	as: '*.js'
 };
 
+const withMDX = createMDX({
+	options: {
+		// Turbopack requires serializable loader options, so plugins are passed by name.
+		remarkPlugins: ['remark-frontmatter', 'remark-mdx-frontmatter']
+	}
+});
+
 const nextConfig = {
 	reactStrictMode: true,
+	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 	experimental: {
 		scrollRestoration: true
 	},
@@ -21,4 +30,4 @@ const nextConfig = {
 	}
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);

@@ -1,12 +1,8 @@
-import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import React from 'react';
+import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-	MDXRemote,
-	type MDXComponents,
-	type MDXRemoteProps
-} from 'next-mdx-remote-client/rsc';
 import { highlight } from 'sugar-high';
 
 type TableProps = {
@@ -143,9 +139,7 @@ const createHeading = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
 	return Heading;
 };
 
-type MdxComponents = MDXComponents & Record<string, ComponentType<any>>;
-
-const mdxComponents: MdxComponents = {
+const defaultMDXComponents: MDXComponents = {
 	h1: createHeading(1),
 	h2: createHeading(2),
 	h3: createHeading(3),
@@ -158,23 +152,11 @@ const mdxComponents: MdxComponents = {
 	Table
 };
 
-export const CustomMDX = ({
-	source,
-	options,
-	components,
-	onError
-}: MDXRemoteProps & {
-	components?: MdxComponents;
-}) => {
-	return (
-		<MDXRemote
-			source={source}
-			options={options}
-			onError={onError}
-			components={{
-				...mdxComponents,
-				...(components || {})
-			}}
-		/>
-	);
+export const getMDXComponents = (
+	overrides?: MDXComponents
+): MDXComponents => {
+	return {
+		...defaultMDXComponents,
+		...(overrides || {})
+	};
 };
