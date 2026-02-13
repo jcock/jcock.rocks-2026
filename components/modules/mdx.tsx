@@ -81,7 +81,11 @@ const Code = ({
 			: Array.isArray(children)
 				? children.join('')
 				: '';
-	const codeHTML = highlight(code);
+	const isBlockCode =
+		typeof props.className === 'string' &&
+		props.className.includes('language-');
+	const codeForHighlight = isBlockCode ? code.replace(/\n$/, '') : code;
+	const codeHTML = highlight(codeForHighlight);
 
 	return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 };
