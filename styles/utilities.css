@@ -13,3 +13,22 @@
 		@apply content-[''] absolute inset-0 z-1 pointer-events-auto bg-transparent;
 	}
 }
+
+/* Prose classes */
+@utility prose {
+	--tw-prose-body: currentColor;
+	--tw-prose-headings: currentColor;
+	--tw-prose-lead: currentColor;
+	--tw-prose-links: currentColor;
+	--tw-prose-bold: currentColor;
+	--tw-prose-counters: currentColor;
+	--tw-prose-hr: currentColor;
+	--tw-prose-quotes: currentColor;
+	--tw-prose-captions: currentColor;
+	--tw-prose-code: currentColor;
+	--tw-prose-pre-code: currentColor;
+	--tw-prose-pre-bg: oklch(96.7% 0.003 264.542);
+	--tw-prose-invert-pre-bg: oklch(0.2475 0.0041 264.49);
+	--tw-prose-th-borders: currentColor;
+	--tw-prose-td-borders: currentColor;
+}
