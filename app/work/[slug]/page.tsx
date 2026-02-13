@@ -27,11 +27,11 @@ type WorkSampleModule = {
 
 const loadWorkSampleComponent = async (slug: string) => {
 	try {
-		const module = (await import(
+		const mdxModule = (await import(
 			/* webpackInclude: /\.mdx$/ */
 			`../samples/${slug}.mdx`
 		)) as WorkSampleModule;
-		return module.default;
+		return mdxModule.default;
 	} catch {
 		return null;
 	}

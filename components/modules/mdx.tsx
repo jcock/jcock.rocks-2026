@@ -152,9 +152,7 @@ const defaultMDXComponents: MDXComponents = {
 	Table
 };
 
-export const getMDXComponents = (
-	overrides?: MDXComponents
-): MDXComponents => {
+export const getMDXComponents = (overrides?: MDXComponents): MDXComponents => {
 	return {
 		...defaultMDXComponents,
 		...(overrides || {})
