@@ -39,7 +39,7 @@ const Footer = () => {
 			initial="hidden"
 			whileInView="show"
 			viewport={{ once: false, amount: 0.4 }}
-			className="relative flex min-h-dvh px-[7.5dvw] sm:px-[10dvw] py-[20dvh] border-t border-border"
+			className="relative flex min-h-dvh px-[7.5dvw] sm:px-[10dvw] py-[20dvh] border-t border-foreground/10"
 		>
 			<Grid
 				columns="grid-cols-1 grid-rows-[1fr_auto]"

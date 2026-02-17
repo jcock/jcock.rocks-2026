@@ -4,6 +4,14 @@ import type { WorkSample, WorkSampleMetadata } from '~/app/work/types';
 
 const WORK_SAMPLES_DIR = path.join(process.cwd(), 'app', 'work', 'samples');
 
+const parseRolesValue = (value: string) => {
+	return value
+		.replace(/^\[(.*)\]$/, '$1')
+		.split(',')
+		.map(role => role.trim().replace(/^['"](.*)['"]$/, '$1'))
+		.filter(Boolean);
+};
+
 const parseFrontmatter = (fileContent: string) => {
 	const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
 	const match = frontmatterRegex.exec(fileContent);
@@ -30,10 +38,7 @@ const parseFrontmatter = (fileContent: string) => {
 		value = value.replace(/^['"](.*)['"]$/, '$1');
 
 		if (key === 'roles') {
-			metadata.roles = value
-				.split(',')
-				.map(role => role.trim())
-				.filter(Boolean);
+			metadata.roles = parseRolesValue(value);
 			continue;
 		}
 

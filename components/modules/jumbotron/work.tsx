@@ -1,12 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import * as React from 'react';
 import { motion, useInView } from 'motion/react';
 import type { Variants } from 'motion/react';
 
 import Jumbotron from '~/components/modules/jumbotron';
-import { Button } from '~/components/modules/core/button';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
 import { fadeItemVariants } from '~/components/util/animations';
@@ -19,9 +17,16 @@ interface JumbotronWorkProps {
 	client: string;
 	year: string;
 	roles: string[];
+	color?: string;
 }
 
-const JumbotronWork = ({ title, client, year, roles }: JumbotronWorkProps) => {
+const JumbotronWork = ({
+	title,
+	client,
+	year,
+	roles,
+	color
+}: JumbotronWorkProps) => {
 	const ref = React.useRef<HTMLDivElement | null>(null);
 	const isInView = useInView(ref, { once: false });
 	const scrollDirection = useScrollDirection();
@@ -41,17 +46,43 @@ const JumbotronWork = ({ title, client, year, roles }: JumbotronWorkProps) => {
 			variants={containerVariants}
 			initial="hidden"
 			animate={isInView ? 'show' : 'hidden'}
-			className="min-h-dvh items-center"
+			className="min-h-dvh items-center font-sans"
+			style={{
+				backgroundColor: color
+			}}
 		>
 			<Jumbotron.Body className="px-[10dvw] py-[20dvh]">
-				<MotionTitle variants={fadeItemVariants}>{title}</MotionTitle>
+				<MotionTitle variants={fadeItemVariants} className="mb-3">
+					{title}
+				</MotionTitle>
 				<motion.p
 					variants={fadeItemVariants}
-					className="text-2xs text-muted-foreground uppercase tracking-widest"
+					className="text-xs text-foreground/70 uppercase tracking-widest"
 				>
 					{client}
 				</motion.p>
 			</Jumbotron.Body>
+
+			{(year || roles.length > 0) && (
+				<motion.div
+					variants={fadeItemVariants}
+					className="mt-auto py-4 bg-background border-b border-foreground/10"
+				>
+					<div className="flex items-center justify-between gap-4 container px-[10dvw] text-2xs text-foreground uppercase tracking-widest font-sans">
+						<time dateTime={year}>{year}</time>
+						{roles.length > 0 && (
+							<motion.ul
+								variants={fadeItemVariants}
+								className="flex items-center divide-x divide-foreground *:px-2"
+							>
+								{roles.map(role => (
+									<li key={role}>{role}</li>
+								))}
+							</motion.ul>
+						)}
+					</div>
+				</motion.div>
+			)}
 		</MotionJumbotron>
 	);
 };
