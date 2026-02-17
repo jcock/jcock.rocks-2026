@@ -4,6 +4,8 @@ export type WorkSampleMetadata = {
 	client: string;
 	summary: string;
 	image?: string;
+	roles: string[];
+	color: string;
 };
 
 export type WorkSample = {

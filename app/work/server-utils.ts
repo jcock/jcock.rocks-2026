@@ -28,6 +28,15 @@ const parseFrontmatter = (fileContent: string) => {
 		const key = rawKey.trim() as keyof WorkSampleMetadata;
 		let value = rawValue.join(':').trim();
 		value = value.replace(/^['"](.*)['"]$/, '$1');
+
+		if (key === 'roles') {
+			metadata.roles = value
+				.split(',')
+				.map(role => role.trim())
+				.filter(Boolean);
+			continue;
+		}
+
 		metadata[key] = value;
 	}
 
@@ -61,7 +70,9 @@ const normalizeMetadata = (
 		publishedAt: metadata.publishedAt || new Date(0).toISOString(),
 		client: metadata.client || '',
 		summary: metadata.summary || '',
-		image: metadata.image
+		image: metadata.image,
+		roles: metadata.roles || [],
+		color: metadata.color || '#2095f0'
 	};
 };
 
