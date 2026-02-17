@@ -29,6 +29,21 @@ const NavSocial = () => {
 					}
 				/>
 			))}
+			<Button
+				variant="ghost"
+				size="icon"
+				nativeButton={false}
+				render={
+					<a
+						href={site.contact.email.url}
+						target="_blank"
+						rel="noreferrer noopener"
+					>
+						<span className="sr-only">{site.contact.email.label}</span>
+						<Icon icon={site.contact.email.icon} size="size-5" />
+					</a>
+				}
+			/>
 		</nav>
 	);
 };

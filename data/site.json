@@ -17,6 +17,13 @@
 	"analytics": {
 		"gtmId": ""
 	},
+	"contact": {
+		"email": {
+			"label": "Email me",
+			"url": "mailto:jason@jcock.rocks",
+			"icon": "fa7-solid:envelope"
+		}
+	},
 	"social": [
 		{
 			"platform": "GitHub",
@@ -35,12 +42,6 @@
 			"label": "Follow me on LinkedIn",
 			"url": "http://www.linkedin.com/in/jasoncockerham",
 			"icon": "fa7-brands:linkedin-in"
-		},
-		{
-			"platform": "Twitter",
-			"label": "Follow me on X",
-			"url": "https://x.com/jcock",
-			"icon": "fa7-brands:x-twitter"
 		},
 		{
 			"platform": "Instagram",
