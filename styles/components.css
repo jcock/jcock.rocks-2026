@@ -1,14 +1,14 @@
 :root {
 	--swiper-navigation-color: transparent;
-	--sh-identifier: #354150;
-	--sh-keyword: #f47067;
-	--sh-string: #00a99a;
-	--sh-class: #8d85ff;
-	--sh-property: #4e8fdf;
-	--sh-entity: #6eafad;
-	--sh-jsxliterals: #bf7db6;
-	--sh-sign: #8996a3;
-	--sh-comment: #a19595;
+	--sh-identifier: oklch(0.3709 0.0303 254.2);
+	--sh-keyword: oklch(0.7017 0.1642 26.07);
+	--sh-string: oklch(0.6601 0.117 183.82);
+	--sh-class: oklch(0.68 0.1752 283.67);
+	--sh-property: oklch(0.6437 0.1379 254.75);
+	--sh-entity: oklch(0.7099 0.0666 193.26);
+	--sh-jsxliterals: oklch(0.6766 0.1111 331.68);
+	--sh-sign: oklch(0.667 0.0244 248.19);
+	--sh-comment: oklch(0.6802 0.0142 17.51);
 }
 
 /* Sugar High syntax highlighting line numbers */
@@ -20,15 +20,15 @@ pre {
 		content: counter(sh-line-number);
 		margin-right: 24px;
 		text-align: right;
-		color: #a4a4a4;
+		color: oklch(0.7187 0 0);
 	}
 }
 
 .dark {
-	--sh-class: #4c97f8;
-	--sh-identifier: white;
-	--sh-keyword: #f47067;
-	--sh-string: #0fa295;
+	--sh-class: oklch(0.6746 0.1624 255.93);
+	--sh-identifier: oklch(1 0 0);
+	--sh-keyword: oklch(0.7017 0.1642 26.07);
+	--sh-string: oklch(0.6414 0.111 184.74);
 
 	pre {
 		& .sh__line::before {
