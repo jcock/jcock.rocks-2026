@@ -8,11 +8,11 @@
 	--breakpoint-xs: 30rem;
 
 	/* Colors */
-	--color-gray-25: #f9fafc;
-	--color-gray-850: #0d0e11;
+	--color-gray-25: oklch(0.9849 0.0029 264.54);
+	--color-gray-850: oklch(0.164 0.0065 271);
 
-	--color-sky-550: #2095f0;
-	--color-pink-650: #ed4e6e;
+	--color-sky-550: oklch(0.654 0.1666 248.39);
+	--color-pink-650: oklch(0.6511 0.1947 12.57);
 
 	/* Fonts */
 	--font-fallback-sans:
