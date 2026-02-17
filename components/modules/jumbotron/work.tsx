@@ -64,11 +64,11 @@ const JumbotronWork = ({
 			</Jumbotron.Body>
 
 			{(year || roles.length > 0) && (
-				<motion.div
-					variants={fadeItemVariants}
-					className="mt-auto py-4 bg-background border-b border-foreground/10"
-				>
-					<div className="flex items-center justify-between gap-4 container px-[10dvw] text-2xs text-foreground uppercase tracking-widest font-sans">
+				<div className="mt-auto py-4 bg-background border-b border-foreground/10">
+					<motion.div
+						variants={fadeItemVariants}
+						className="flex items-center justify-between gap-4 container px-[10dvw] text-2xs text-foreground uppercase tracking-widest font-sans"
+					>
 						<time dateTime={year}>{year}</time>
 						{roles.length > 0 && (
 							<motion.ul
@@ -80,8 +80,8 @@ const JumbotronWork = ({
 								))}
 							</motion.ul>
 						)}
-					</div>
-				</motion.div>
+					</motion.div>
+				</div>
 			)}
 		</MotionJumbotron>
 	);
