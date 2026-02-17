@@ -67,13 +67,13 @@ const JumbotronWork = ({
 				<div className="mt-auto py-4 bg-background border-b border-foreground/10">
 					<motion.div
 						variants={fadeItemVariants}
-						className="flex items-center justify-between gap-4 container px-[10dvw] text-2xs text-foreground uppercase tracking-widest font-sans"
+						className="flex justify-between gap-8 container px-[10dvw] text-2xs text-foreground uppercase tracking-widest font-sans"
 					>
 						<time dateTime={year}>{year}</time>
 						{roles.length > 0 && (
 							<motion.ul
 								variants={fadeItemVariants}
-								className="flex items-center divide-x divide-foreground *:px-2"
+								className="flex items-center flex-wrap *:after:content-[',_'] *:last:after:content-[''] *:pr-1 *:last:pr-0"
 							>
 								{roles.map(role => (
 									<li key={role}>{role}</li>
