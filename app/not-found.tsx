@@ -19,9 +19,9 @@ const NotFoundPage = () => {
 		<>
 			<StructuredData data={structuredData} />
 
-			<section className="relative grid place-items-center min-h-dvh py-12 overflow-clip bg-foreground text-white">
+			<section className="relative grid place-items-center min-h-dvh py-12 overflow-clip">
 				<div className="relative z-10 container px-4 text-center">
-					<h1 className="text-[clamp(3.34rem,25vw,23rem)] leading-tight font-extrabold text-pretty uppercase text-background/30">
+					<h1 className="text-[clamp(3.34rem,25vw,23rem)] leading-tight font-extrabold text-pretty uppercase text-foreground/30">
 						Oops
 					</h1>
 					<p className="mb-8 text-lg md:text-xl lg:text-2xl font-bold text-pretty">
@@ -30,7 +30,7 @@ const NotFoundPage = () => {
 
 					<nav className="max-w-xl mx-auto flex flex-wrap justify-center gap-4 font-semibold font-sans">
 						<Button
-							variant="link-light"
+							variant="link"
 							hasUnderline
 							nativeButton={false}
 							render={<Link href="/">Home</Link>}
