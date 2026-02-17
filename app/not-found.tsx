@@ -5,6 +5,8 @@ import StructuredData from '~/components/util/structured-data';
 import { Button } from '~/components/modules/core/button';
 import { buildPageMetadata, buildWebPageStructuredData } from '~/lib/seo';
 
+import FaceHurt from '~/images/inline/face.hurt.svg';
+
 export const metadata: Metadata = buildPageMetadata({
 	title: '404: Not found'
 });
@@ -21,11 +23,18 @@ const NotFoundPage = () => {
 
 			<section className="relative grid place-items-center min-h-dvh py-12 overflow-clip">
 				<div className="relative z-10 container px-4 text-center">
-					<h1 className="text-[clamp(3.34rem,25vw,23rem)] leading-tight font-extrabold text-pretty uppercase text-foreground/30">
-						Oops
+					<FaceHurt
+						role="img"
+						aria-hidden="true"
+						className="w-1/6 md:w-1/5 mx-auto opacity-30"
+					/>
+					<h1 className="text-[clamp(3.34rem,20vw,18rem)] leading-tight font-extrabold text-pretty uppercase text-foreground/30">
+						Damn
 					</h1>
-					<p className="mb-8 text-lg md:text-xl lg:text-2xl font-bold text-pretty">
-						This page could not be found
+					<p className="max-w-xl mx-auto mb-8 text-base md:text-lg lg:text-xl text-pretty">
+						Looks like the page you’re looking for doesn’t exist. Don’t worry,
+						it happens to the best of us. You can always head back to the
+						homepage and start fresh.
 					</p>
 
 					<nav className="max-w-xl mx-auto flex flex-wrap justify-center gap-4 font-semibold font-sans">
