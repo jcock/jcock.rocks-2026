@@ -46,7 +46,7 @@ const JumbotronHome = () => {
 					<motion.span variants={fadeItemVariants} className="block">
 						I’m{' '}
 						<Button
-							variant="link-light"
+							variant="link"
 							size="link"
 							hasUnderline
 							nativeButton={false}
@@ -56,7 +56,7 @@ const JumbotronHome = () => {
 					<motion.span variants={fadeItemVariants} className="block">
 						and I{' '}
 						<Button
-							variant="link-light"
+							variant="link"
 							size="link"
 							hasUnderline
 							nativeButton={false}

@@ -14,7 +14,7 @@ const Jumbotron = forwardRef<HTMLElement, JumbotronProps>(
 			<section
 				ref={ref}
 				className={twMerge(
-					'relative grid grid-cols-1 grid-rows-1 overflow-hidden bg-foreground text-background',
+					'relative grid grid-cols-1 grid-rows-1 overflow-hidden bg-background text-foreground',
 					className ?? ''
 				)}
 				{...rest}

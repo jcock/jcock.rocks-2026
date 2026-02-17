@@ -7,10 +7,8 @@ type ViewTransitionsProviderProps = {
 	children: ReactNode;
 };
 
-const ViewTransitionsProvider = ({
+export const ViewTransitionsProvider = ({
 	children
 }: ViewTransitionsProviderProps) => {
 	return <ViewTransitions>{children}</ViewTransitions>;
 };
-
-export default ViewTransitionsProvider;

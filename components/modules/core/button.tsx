@@ -22,7 +22,8 @@ const buttonVariants = cva(
 				destructive:
 					'bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive focus-visible:border-destructive/40 dark:hover:bg-destructive/30',
 				link: '[font-family:inherit]! text-primary hover:text-primary/80',
-				'link-light': '[font-family:inherit]! text-white hover:text-white/80'
+				'link-light':
+					'[font-family:inherit]! text-primary-foreground hover:text-primary-foreground/80'
 			},
 			size: {
 				none: '',

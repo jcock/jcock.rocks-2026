@@ -8,7 +8,6 @@ import site from '~/data/site.json';
 import '~/styles/app.css';
 
 import Layout from '~/components/layout/layout';
-import ViewTransitionsProvider from '~/components/util/view-transitions-provider';
 
 export const metadata: Metadata = siteMetadata;
 export const viewport: Viewport = siteViewport;
@@ -21,7 +20,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
 	const gtmId = site.analytics.gtmId;
 
 	return (
-		<html lang="en-US">
+		<html lang="en-US" suppressHydrationWarning>
 			<body className={`${inter.variable} ${notoSerif.variable}`}>
 				{gtmId && process.env.NODE_ENV === 'production' ? (
 					<Script id="google-tag-manager" strategy="afterInteractive">
@@ -34,9 +33,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
 						`}
 					</Script>
 				) : null}
-				<ViewTransitionsProvider>
-					<Layout>{children}</Layout>
-				</ViewTransitionsProvider>
+				<Layout>{children}</Layout>
 			</body>
 		</html>
 	);
