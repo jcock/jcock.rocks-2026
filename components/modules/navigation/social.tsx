@@ -14,7 +14,7 @@ const NavSocial = () => {
 	const socials = site.social as SocialLink[];
 
 	return (
-		<nav className="flex items-center justify-between md:justify-self-center gap-3 md:w-2/3 py-[2.5vh] px-4 border-t border-border">
+		<nav className="flex items-center justify-between md:justify-self-center gap-3 md:w-2/3 py-[2.5vh] px-4 border-t border-foreground/10">
 			{socials.map(social => (
 				<Button
 					key={social.platform}
