@@ -4,6 +4,14 @@ import type { WorkSample, WorkSampleMetadata } from '~/app/work/types';
 
 const WORK_SAMPLES_DIR = path.join(process.cwd(), 'app', 'work', 'samples');
 
+const parseRolesValue = (value: string) => {
+	return value
+		.replace(/^\[(.*)\]$/, '$1')
+		.split(',')
+		.map(role => role.trim().replace(/^['"](.*)['"]$/, '$1'))
+		.filter(Boolean);
+};
+
 const parseFrontmatter = (fileContent: string) => {
 	const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
 	const match = frontmatterRegex.exec(fileContent);
@@ -28,6 +36,12 @@ const parseFrontmatter = (fileContent: string) => {
 		const key = rawKey.trim() as keyof WorkSampleMetadata;
 		let value = rawValue.join(':').trim();
 		value = value.replace(/^['"](.*)['"]$/, '$1');
+
+		if (key === 'roles') {
+			metadata.roles = parseRolesValue(value);
+			continue;
+		}
+
 		metadata[key] = value;
 	}
 
@@ -61,7 +75,9 @@ const normalizeMetadata = (
 		publishedAt: metadata.publishedAt || new Date(0).toISOString(),
 		client: metadata.client || '',
 		summary: metadata.summary || '',
-		image: metadata.image
+		image: metadata.image,
+		roles: metadata.roles || [],
+		color: metadata.color || '#2095f0'
 	};
 };
 

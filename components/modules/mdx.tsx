@@ -59,14 +59,26 @@ const CustomLink = (props: ComponentPropsWithoutRef<'a'>) => {
 	}
 
 	if (href.startsWith('#')) {
-		return <a {...props} />;
+		return <a {...props}>{props.children}</a>;
 	}
 
-	return <a target="_blank" rel="noopener noreferrer" {...props} />;
+	return (
+		<a target="_blank" rel="noopener noreferrer" {...props}>
+			{props.children}
+		</a>
+	);
 };
 
-const RoundedImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
-	return <Image className="rounded-lg" {...props} />;
+const DefaultImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
+	return <Image sizes="100vw" {...props} />;
+};
+
+const PulledImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
+	return (
+		<div className="md:-mx-8 lg:-mx-24">
+			<Image className="w-full h-auto" {...props} />
+		</div>
+	);
 };
 
 const Code = ({
@@ -150,7 +162,8 @@ const defaultMDXComponents: MDXComponents = {
 	h4: createHeading(4),
 	h5: createHeading(5),
 	h6: createHeading(6),
-	Image: RoundedImage,
+	Image: DefaultImage,
+	PulledImage,
 	a: CustomLink,
 	code: Code,
 	Table

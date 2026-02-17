@@ -5,6 +5,8 @@
 
 	html {
 		@apply font-serif text-450 bg-background text-foreground scroll-smooth;
+		scrollbar-width: thin;
+		scrollbar-color: var(--color-sky-550) var(--background);
 	}
 
 	::selection {
