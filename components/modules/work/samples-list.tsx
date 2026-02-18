@@ -1,5 +1,6 @@
+import Link from 'next/link';
+
 import List from '~/components/modules/text/list';
-import Link from '~/components/modules/navigation/transition-link';
 import { formatDate } from '~/app/work/utils';
 import type { WorkSample } from '~/app/work/types';
 

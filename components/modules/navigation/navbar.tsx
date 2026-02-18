@@ -1,4 +1,5 @@
-import Link from '~/components/modules/navigation/transition-link';
+import Link from 'next/link';
+
 import ViewModeToggle from '~/components/modules/navigation/view-mode';
 
 import site from '~/data/site.json';
