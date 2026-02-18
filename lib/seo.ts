@@ -15,9 +15,6 @@ const resolveSiteOrigin = () => {
 };
 
 const siteOrigin = resolveSiteOrigin();
-const shareImagePath = site.shareImage.startsWith('/')
-	? site.shareImage
-	: `/${site.shareImage}`;
 
 type PageMetadataOptions = {
 	title?: string;
@@ -38,19 +35,6 @@ export const siteMetadata: Metadata = {
 		template: `%s | ${site.title}`
 	},
 	description: site.description,
-	openGraph: {
-		type: 'website',
-		title: site.title,
-		description: site.description,
-		images: [shareImagePath]
-	},
-	twitter: {
-		card: 'summary',
-		creator: site.author,
-		title: site.title,
-		description: site.description,
-		images: [shareImagePath]
-	},
 	icons: {
 		icon: [
 			{
@@ -91,20 +75,7 @@ export const buildPageMetadata = ({
 	return {
 		title,
 		description: pageDescription,
-		keywords,
-		openGraph: {
-			type: 'website',
-			title: pageTitle,
-			description: pageDescription,
-			images: [shareImagePath]
-		},
-		twitter: {
-			card: 'summary',
-			creator: site.author,
-			title: pageTitle,
-			description: pageDescription,
-			images: [shareImagePath]
-		}
+		keywords
 	};
 };
 
