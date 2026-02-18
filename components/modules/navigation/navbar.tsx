@@ -1,5 +1,6 @@
 import Link from '~/components/modules/navigation/transition-link';
 import ViewModeToggle from '~/components/modules/navigation/view-mode';
+import Icon from '~/components/modules/icon';
 
 import site from '~/data/site.json';
 
@@ -10,7 +11,7 @@ const Navbar = () => {
 		<div className="flex justify-between gap-4 py-2 px-4 container text-foreground">
 			<Link
 				href="/"
-				className="block group jcock-letters--container mt-2.75 pointer-events-auto"
+				className="group jcock-letters--container block mt-2.75 pointer-events-auto"
 			>
 				<JcockLetters
 					role="img"
