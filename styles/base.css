@@ -14,9 +14,13 @@
 	}
 
 	/* View transition animation */
+	::view-transition-new(root) {
+		animation-delay: 400ms;
+	}
+
 	::view-transition-old(root),
 	::view-transition-new(root) {
-		animation-duration: 600ms;
+		animation-duration: 400ms;
 	}
 
 	a,
