@@ -1,7 +1,7 @@
 'use client';
 
 import type { ComponentProps } from 'react';
-import { Link } from 'next-view-transitions';
+import { Link } from 'next-transition-router';
 
 type TransitionLinkProps = ComponentProps<typeof Link>;
 
