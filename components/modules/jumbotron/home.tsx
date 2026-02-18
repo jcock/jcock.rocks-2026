@@ -35,7 +35,7 @@ const JumbotronHome = () => {
 			animate={isInView ? 'show' : 'hidden'}
 			className="min-h-dvh items-center"
 		>
-			<Jumbotron.Body className="px-[10dvw] py-[20dvh]">
+			<Jumbotron.Body className="px-[5dvw] sm:px-[10dvw] py-[20dvh]">
 				<Jumbotron.Title>
 					<motion.span
 						variants={fadeItemVariants}
