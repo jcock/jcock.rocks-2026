@@ -5,13 +5,12 @@
 	"author": "@jcock",
 	"url": "https://jcock.rocks.netlify.app",
 	"logo": "favicon.svg",
-	"shareImage": "share.png",
 	"colors": {
 		"progress": "#0d0d0d",
 		"manifest": {
-			"backgroundColor": "#fff",
-			"themeColor": "#fff",
-			"tileColor": "#fff"
+			"backgroundColor": "#0d0e11",
+			"themeColor": "#0d0e11",
+			"tileColor": "#0d0e11"
 		}
 	},
 	"analytics": {
