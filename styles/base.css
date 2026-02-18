@@ -13,6 +13,12 @@
 		@apply bg-sky-550 text-white;
 	}
 
+	/* View transition animation */
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 600ms;
+	}
+
 	a,
 	button:not(:disabled),
 	[role='button']:not(:disabled) {
