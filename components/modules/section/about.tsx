@@ -37,7 +37,7 @@ const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 		>
 			<Section
 				id={id}
-				className={`grid items-center min-h-dvh px-[10dvw] py-[20dvh] ${className ?? ''}`}
+				className={`grid items-center min-h-dvh px-[5dvw] sm:px-[10dvw] py-[20dvh] ${className ?? ''}`}
 			>
 				<div className="container px-4">
 					<Grid columns="lg:grid-cols-2" className="items-center">

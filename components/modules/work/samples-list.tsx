@@ -11,7 +11,7 @@ interface WorkSamplesListProps {
 
 const WorkSamplesList = ({ className, samples }: WorkSamplesListProps) => {
 	return (
-		<List className={className ?? ''}>
+		<List className={`space-y-8 ${className ?? ''}`}>
 			{[...samples]
 				.sort((a, b) => {
 					if (
