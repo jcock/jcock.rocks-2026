@@ -1,26 +1,26 @@
 {
-	"name": "Jason Cockerham 🤘 Designer and Developer",
-	"short_name": "Jason Cockerham",
+	"name": "jcock.rocks",
+	"short_name": "Jcock",
 	"description": "The portfolio of Jason Cockerham, Senior Designer/Developer.",
 	"dir": "auto",
 	"lang": "en-US",
-	"display": "browser",
+	"display": "standalone",
 	"orientation": "any",
 	"start_url": "/?homescreen=1",
-	"background_color": "#fff",
-	"theme_color": "#fff",
+	"background_color": "#0d0e11",
+	"theme_color": "#0d0e11",
 	"icons": [
 		{
-			"src": "/android-chrome-192x192.png",
+			"src": "/web-app-manifest-192x192.png",
 			"sizes": "192x192",
 			"type": "image/png",
-			"purpose": "any"
+			"purpose": "maskable"
 		},
 		{
-			"src": "/android-chrome-512x512.png",
+			"src": "/web-app-manifest-512x512.png",
 			"sizes": "512x512",
 			"type": "image/png",
-			"purpose": "any"
+			"purpose": "maskable"
 		}
 	]
 }

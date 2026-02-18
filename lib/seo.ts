@@ -38,6 +38,11 @@ export const siteMetadata: Metadata = {
 	icons: {
 		icon: [
 			{
+				url: '/favicon-96x96.png',
+				type: 'image/png',
+				sizes: '96x96'
+			},
+			{
 				url: '/favicon.svg',
 				type: 'image/svg+xml'
 			},
@@ -54,9 +59,9 @@ export const siteMetadata: Metadata = {
 		],
 		apple: '/apple-touch-icon.png'
 	},
-	manifest: '/manifest.webmanifest',
 	other: {
-		'msapplication-TileColor': site.colors.manifest.tileColor
+		'msapplication-TileColor': site.colors.manifest.tileColor,
+		'apple-mobile-web-app-title': site.webAppTitle
 	}
 };
 
