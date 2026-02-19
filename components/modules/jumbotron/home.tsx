@@ -36,14 +36,11 @@ const JumbotronHome = () => {
 		>
 			<Jumbotron.Body className="px-8 md:px-16 pt-64 pb-20">
 				<Grid>
-					<Jumbotron.Title className="md:col-start-2 text-xl sm:text-2xl text-foreground/75 dark:text-foreground/50 font-normal">
-						<motion.span variants={fadeUpItemVariants} className="block">
-							I’m Jason Cockerham
-						</motion.span>
-						<motion.span variants={fadeUpItemVariants} className="block">
-							and I make internets.
-						</motion.span>
-					</Jumbotron.Title>
+					<motion.div variants={fadeUpItemVariants} className="md:col-start-2 ">
+						<Jumbotron.Title className="text-2xl/10 md:text-3xl/10 xl:text-4xl/12 text-foreground/75 dark:text-foreground/50">
+							I’m Jason Cockerham and I make internets.
+						</Jumbotron.Title>
+					</motion.div>
 				</Grid>
 			</Jumbotron.Body>
 		</MotionJumbotron>

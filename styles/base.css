@@ -10,7 +10,7 @@
 	}
 
 	::selection {
-		@apply bg-sky-550 text-white;
+		@apply bg-sky-550 text-background;
 	}
 
 	/* View transition animation */
@@ -35,6 +35,6 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-sans font-bold;
+		@apply font-sans font-medium;
 	}
 }

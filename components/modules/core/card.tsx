@@ -91,7 +91,7 @@ function CardTitle({
 		<h3
 			data-slot="card-title"
 			className={cn(
-				'text-lg sm:text-base lg:text-xl leading-normal font-normal group-data-[size=sm]/card:text-sm',
+				'text-lg sm:text-base lg:text-xl leading-normal group-data-[size=sm]/card:text-sm',
 				className
 			)}
 			{...props}
