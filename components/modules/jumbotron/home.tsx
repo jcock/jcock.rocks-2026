@@ -1,12 +1,11 @@
 'use client';
 
-import Link from 'next/link';
 import * as React from 'react';
 import { motion, useInView } from 'motion/react';
 import type { Variants } from 'motion/react';
 
 import Jumbotron from '~/components/modules/jumbotron';
-import { Button } from '~/components/modules/core/button';
+import Grid from '~/components/modules/grid';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
 import { fadeItemVariants } from '~/components/util/animations';
@@ -33,37 +32,19 @@ const JumbotronHome = () => {
 			variants={containerVariants}
 			initial="hidden"
 			animate={isInView ? 'show' : 'hidden'}
-			className="min-h-dvh items-center"
+			className="items-center"
 		>
-			<Jumbotron.Body className="px-[5dvw] sm:px-[10dvw] py-[20dvh]">
-				<Jumbotron.Title>
-					<motion.span
-						variants={fadeItemVariants}
-						className="block mb-3 text-2xs text-muted-foreground uppercase tracking-widest"
-					>
-						Hello,
-					</motion.span>
-					<motion.span variants={fadeItemVariants} className="block">
-						I’m{' '}
-						<Button
-							variant="link"
-							size="link"
-							hasUnderline
-							nativeButton={false}
-							render={<Link href="#about">Jason Cockerham</Link>}
-						/>
-					</motion.span>
-					<motion.span variants={fadeItemVariants} className="block">
-						and I{' '}
-						<Button
-							variant="link"
-							size="link"
-							hasUnderline
-							nativeButton={false}
-							render={<Link href="#work">make internets.</Link>}
-						/>
-					</motion.span>
-				</Jumbotron.Title>
+			<Jumbotron.Body className="px-8 md:px-16 pt-40 pb-20">
+				<Grid>
+					<Jumbotron.Title className="md:col-start-2 text-xl sm:text-2xl font-normal">
+						<motion.span variants={fadeItemVariants} className="block">
+							I’m Jason Cockerham
+						</motion.span>
+						<motion.span variants={fadeItemVariants} className="block">
+							and I make internets.
+						</motion.span>
+					</Jumbotron.Title>
+				</Grid>
 			</Jumbotron.Body>
 		</MotionJumbotron>
 	);

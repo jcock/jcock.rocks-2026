@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import type { Variants } from 'motion/react';
+import { formatDistance } from 'date-fns';
 
 import Section from '~/components/modules/section';
 import Grid from '~/components/modules/grid';
@@ -15,6 +16,8 @@ interface SectionAboutProps {
 	id?: string;
 	className?: string;
 }
+
+const experienceTime = formatDistance(new Date(2005, 6, 1), new Date());
 
 const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 	const scrollDirection = useScrollDirection();
@@ -53,7 +56,7 @@ const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 								I like to dabble in design and code.
 							</h3>
 							<p>
-								In other words, I’m an experienced UX & UI Designer, Front-End
+								In other words, I’m an experienced UX/UI Designer, Full-Stack
 								Developer, Project Manager, Digital Strategist, and all-around
 								solver of problems. I reside in Delaware and work as part of the
 								digital team at{' '}
@@ -75,9 +78,9 @@ const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 								.
 							</p>
 							<p className="mb-8">
-								I’m happy to say that even after more than 15 years I haven’t
-								lost my love for making things that have a positive impact. I
-								love solving problems. Not only at work, but with the products I
+								I’m happy to say that even after {experienceTime} I haven’t lost
+								my love for making things that have a positive impact. I love
+								solving problems. Not only at work, but with the products I
 								produce. I am so grateful that I have the opportunity to work
 								with such talented people. I’ve learned so much from them.
 							</p>
