@@ -5,6 +5,8 @@ import { forwardRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
+import { cn } from '~/lib/utils';
+
 const NavLink = ({ children }: { children?: ReactNode }) => {
 	return <>{children}</>;
 };
@@ -30,15 +32,17 @@ export const Anchor = ({
 }: AnchorProps) => {
 	const pathname = usePathname();
 	const isActive =
-		(activeClassName && pathname === href) ||
-		(pathname.startsWith(`${href}/`) && partiallyActive);
+		pathname === href || (pathname.startsWith(`${href}/`) && partiallyActive);
 
 	return (
 		<Link
 			href={href}
-			className={`group ${className ?? ''} ${
-				isActive ? `is-active ${activeClassName ?? ''}` : ''
-			}`}
+			className={cn(
+				'group block md:inline-block px-3 py-2.5 font-sans text-sm text-foreground/50 transition-colors hover:text-foreground focus:text-foreground pointer-events-auto',
+				className ?? '',
+				isActive &&
+					`is-active text-foreground! underline! decoration-1 underline-offset-4 ${activeClassName ?? ''}`
+			)}
 			{...rest}
 		>
 			{children}

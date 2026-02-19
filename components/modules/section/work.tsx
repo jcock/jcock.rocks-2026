@@ -9,7 +9,7 @@ import List from '~/components/modules/text/list';
 import WorkSamplesList from '~/components/modules/work/samples-list';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
-import { fadeItemVariants } from '~/components/util/animations';
+import { fadeUpItemVariants } from '~/components/util/animations';
 
 import AwardWebby from '~/images/inline/awards/webby.svg';
 import AwardAaa from '~/images/inline/awards/aaa.svg';
@@ -47,13 +47,13 @@ const SectionWork = ({ id = 'work', className, samples }: SectionWorkProps) => {
 			>
 				<div className="container px-4">
 					<Grid columns="lg:grid-cols-2" className="items-center">
-						<motion.div variants={fadeItemVariants}>
+						<motion.div variants={fadeUpItemVariants}>
 							<Section.Title>Work.</Section.Title>
 						</motion.div>
 
 						<Grid.Item className="space-y-12 md:space-y-20">
 							<motion.div
-								variants={fadeItemVariants}
+								variants={fadeUpItemVariants}
 								className="space-y-4 *:text-pretty"
 							>
 								<h3 className="mb-8 text-base lg:text-xs lg:uppercase text-muted-foreground">
@@ -63,7 +63,10 @@ const SectionWork = ({ id = 'work', className, samples }: SectionWorkProps) => {
 								<WorkSamplesList samples={samples} />
 							</motion.div>
 
-							<motion.div variants={fadeItemVariants} className="*:text-pretty">
+							<motion.div
+								variants={fadeUpItemVariants}
+								className="*:text-pretty"
+							>
 								<h3 className="mb-8 text-base lg:text-xs lg:uppercase text-muted-foreground">
 									A little recognition.
 								</h3>

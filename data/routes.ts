@@ -6,12 +6,12 @@ const routes = {
 		{
 			slug: '/',
 			title: 'Work',
-			useIn: ['navbar', '404']
+			useIn: ['navbar', 'error']
 		},
 		{
 			slug: '/about',
 			title: 'About',
-			useIn: ['navbar', '404']
+			useIn: ['navbar', 'error']
 		}
 	]
 };

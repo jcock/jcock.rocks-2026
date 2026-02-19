@@ -8,7 +8,7 @@ import Jumbotron from '~/components/modules/jumbotron';
 import Grid from '~/components/modules/grid';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
-import { fadeItemVariants } from '~/components/util/animations';
+import { fadeUpItemVariants } from '~/components/util/animations';
 
 const MotionJumbotron = motion.create(Jumbotron);
 
@@ -37,10 +37,10 @@ const JumbotronHome = () => {
 			<Jumbotron.Body className="px-8 md:px-16 pt-64 pb-20">
 				<Grid>
 					<Jumbotron.Title className="md:col-start-2 text-xl sm:text-2xl font-normal">
-						<motion.span variants={fadeItemVariants} className="block">
+						<motion.span variants={fadeUpItemVariants} className="block">
 							I’m Jason Cockerham
 						</motion.span>
-						<motion.span variants={fadeItemVariants} className="block">
+						<motion.span variants={fadeUpItemVariants} className="block">
 							and I make internets.
 						</motion.span>
 					</Jumbotron.Title>

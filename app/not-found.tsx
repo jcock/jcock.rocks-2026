@@ -33,8 +33,8 @@ const NotFoundPage = () => {
 					</h1>
 					<p className="max-w-xl mx-auto mb-8 text-base md:text-lg lg:text-xl text-pretty">
 						Looks like the page you’re looking for doesn’t exist. Don’t worry,
-						it happens to the best of us. You can always head back to the
-						homepage and start fresh.
+						it happens to the best of us. You can always head back to the work
+						page and start fresh.
 					</p>
 
 					<nav className="max-w-xl mx-auto flex flex-wrap justify-center gap-4 font-semibold font-sans">
@@ -42,7 +42,7 @@ const NotFoundPage = () => {
 							variant="link"
 							hasUnderline
 							nativeButton={false}
-							render={<Link href="/">Home</Link>}
+							render={<Link href="/">Work</Link>}
 						/>
 					</nav>
 				</div>

@@ -10,7 +10,7 @@ import { Button } from '~/components/modules/core/button';
 import Icon from '~/components/modules/icon';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
-import { fadeItemVariants } from '~/components/util/animations';
+import { fadeUpItemVariants } from '~/components/util/animations';
 
 interface SectionAboutProps {
 	id?: string;
@@ -44,12 +44,12 @@ const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 			>
 				<div className="container px-4">
 					<Grid columns="lg:grid-cols-2" className="items-center">
-						<motion.div variants={fadeItemVariants}>
+						<motion.div variants={fadeUpItemVariants}>
 							<Section.Title>About.</Section.Title>
 						</motion.div>
 
 						<motion.div
-							variants={fadeItemVariants}
+							variants={fadeUpItemVariants}
 							className="space-y-4 *:text-pretty"
 						>
 							<h3 className="text-base lg:text-xs lg:uppercase text-muted-foreground">

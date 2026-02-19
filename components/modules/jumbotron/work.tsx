@@ -7,7 +7,7 @@ import type { Variants } from 'motion/react';
 import Jumbotron from '~/components/modules/jumbotron';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
-import { fadeItemVariants } from '~/components/util/animations';
+import { fadeUpItemVariants } from '~/components/util/animations';
 
 const MotionJumbotron = motion.create(Jumbotron);
 const MotionTitle = motion.create(Jumbotron.Title);
@@ -52,11 +52,11 @@ const JumbotronWork = ({
 			}}
 		>
 			<Jumbotron.Body className="px-[10dvw] py-[20dvh]">
-				<MotionTitle variants={fadeItemVariants} className="mb-3">
+				<MotionTitle variants={fadeUpItemVariants} className="mb-3">
 					{title}
 				</MotionTitle>
 				<motion.p
-					variants={fadeItemVariants}
+					variants={fadeUpItemVariants}
 					className="text-xs text-foreground/70 uppercase tracking-widest"
 				>
 					{client}
@@ -66,13 +66,13 @@ const JumbotronWork = ({
 			{(year || roles.length > 0) && (
 				<div className="mt-auto py-4 bg-background border-b border-foreground/10">
 					<motion.div
-						variants={fadeItemVariants}
+						variants={fadeUpItemVariants}
 						className="flex justify-between gap-8 container px-[10dvw] text-2xs text-foreground uppercase tracking-widest font-sans"
 					>
 						<time dateTime={year}>{year}</time>
 						{roles.length > 0 && (
 							<motion.ul
-								variants={fadeItemVariants}
+								variants={fadeUpItemVariants}
 								className="flex items-center flex-wrap *:after:content-[',_'] *:last:after:content-[''] *:pr-1 *:last:pr-0"
 							>
 								{roles.map(role => (

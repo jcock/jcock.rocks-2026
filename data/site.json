@@ -21,7 +21,7 @@
 		"email": {
 			"label": "Email me",
 			"url": "mailto:jason@jcock.rocks",
-			"icon": "fa7-solid:envelope"
+			"icon": "ph:envelope"
 		}
 	},
 	"social": [
@@ -29,7 +29,7 @@
 			"platform": "GitHub",
 			"label": "Follow me on GitHub",
 			"url": "https://github.com/jcock",
-			"icon": "fa7-brands:github"
+			"icon": "ri:github-line"
 		},
 		{
 			"platform": "Dribbble",
@@ -39,13 +39,13 @@
 		},
 		{
 			"platform": "LinkedIn",
-			"label": "Follow me on LinkedIn",
+			"label": "Connect with me on LinkedIn",
 			"url": "http://www.linkedin.com/in/jasoncockerham",
-			"icon": "fa7-brands:linkedin-in"
+			"icon": "basil:linkedin-outline"
 		},
 		{
 			"platform": "Instagram",
-			"label": "Follow me on instagram",
+			"label": "Follow me on Instagram",
 			"url": "https://www.instagram.com/jc0ck",
 			"icon": "fa7-brands:instagram"
 		}
