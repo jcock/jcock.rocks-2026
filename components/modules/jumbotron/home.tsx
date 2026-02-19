@@ -34,7 +34,7 @@ const JumbotronHome = () => {
 			animate={isInView ? 'show' : 'hidden'}
 			className="items-center"
 		>
-			<Jumbotron.Body className="px-8 md:px-16 pt-40 pb-20">
+			<Jumbotron.Body className="px-8 md:px-16 pt-64 pb-20">
 				<Grid>
 					<Jumbotron.Title className="md:col-start-2 text-xl sm:text-2xl font-normal">
 						<motion.span variants={fadeItemVariants} className="block">
