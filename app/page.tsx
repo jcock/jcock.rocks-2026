@@ -16,7 +16,6 @@ const HomePage = () => {
 			<StructuredData data={structuredData} />
 
 			<JumbotronHome />
-			<AboutSection />
 			<WorkSection samples={workSamples} />
 		</>
 	);

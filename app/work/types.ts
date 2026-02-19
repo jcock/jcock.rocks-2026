@@ -6,6 +6,7 @@ export type WorkSampleMetadata = {
 	image?: string;
 	roles: string[];
 	color: string;
+	featuredImage: string;
 };
 
 export type WorkSample = {

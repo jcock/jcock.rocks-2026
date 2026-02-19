@@ -1,19 +1,24 @@
 'use client';
 
+import * as React from 'react';
+import Link from 'next/link';
+import Autoplay from 'embla-carousel-autoplay';
+import Fade from 'embla-carousel-fade';
 import { motion } from 'motion/react';
 import type { Variants } from 'motion/react';
 
 import Section from '~/components/modules/section';
 import Grid from '~/components/modules/grid';
-import List from '~/components/modules/text/list';
-import WorkSamplesList from '~/components/modules/work/samples-list';
+import {
+	Card,
+	CardImage,
+	CardTitle,
+	CardDescription,
+	CardContent
+} from '~/components/modules/core/card';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
 import { fadeUpItemVariants } from '~/components/util/animations';
-
-import AwardWebby from '~/images/inline/awards/webby.svg';
-import AwardAaa from '~/images/inline/awards/aaa.svg';
-import AwardWebAward from '~/images/inline/awards/webaward.svg';
 import type { WorkSample } from '~/app/work/types';
 
 interface SectionWorkProps {
@@ -24,6 +29,19 @@ interface SectionWorkProps {
 
 const SectionWork = ({ id = 'work', className, samples }: SectionWorkProps) => {
 	const scrollDirection = useScrollDirection();
+
+	const sortedSamples = React.useMemo(
+		() =>
+			[...samples].sort((a, b) => {
+				if (
+					new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
+				) {
+					return -1;
+				}
+				return 1;
+			}),
+		[samples]
+	);
 
 	const containerVariants: Variants = {
 		show: {
@@ -43,79 +61,38 @@ const SectionWork = ({ id = 'work', className, samples }: SectionWorkProps) => {
 		>
 			<Section
 				id={id}
-				className={`grid items-center min-h-dvh px-[5dvw] sm:px-[10dvw] py-[20dvh] ${className ?? ''}`}
+				className={`grid items-center px-8 md:px-16 py-24 md:py-32 ${className ?? ''}`}
 			>
 				<div className="container px-4">
-					<Grid columns="lg:grid-cols-2" className="items-center">
-						<motion.div variants={fadeUpItemVariants}>
-							<Section.Title>Work.</Section.Title>
-						</motion.div>
-
-						<Grid.Item className="space-y-12 md:space-y-20">
-							<motion.div
-								variants={fadeUpItemVariants}
-								className="space-y-4 *:text-pretty"
-							>
-								<h3 className="mb-8 text-base lg:text-xs lg:uppercase text-muted-foreground">
-									Things I’ve made.
-								</h3>
-
-								<WorkSamplesList samples={samples} />
-							</motion.div>
-
-							<motion.div
-								variants={fadeUpItemVariants}
-								className="*:text-pretty"
-							>
-								<h3 className="mb-8 text-base lg:text-xs lg:uppercase text-muted-foreground">
-									A little recognition.
-								</h3>
-
-								<List.Grid columns="grid-cols-3" gap="gap-4 md:gap-8">
-									{[
-										{
-											name: 'Webby Award',
-											image: (
-												<AwardWebby
-													role="img"
-													aria-hidden="true"
-													className="w-18 md:w-24 mx-auto"
-												/>
-											)
-										},
-										{
-											name: 'American Advertising Award',
-											image: (
-												<AwardAaa
-													role="img"
-													aria-hidden="true"
-													className="w-16 md:w-22 mx-auto"
-												/>
-											)
-										},
-										{
-											name: 'Webaward',
-											image: (
-												<AwardWebAward
-													role="img"
-													aria-hidden="true"
-													className="w-14 md:w-20 mx-auto"
-												/>
-											)
-										}
-									].map(award => (
-										<List.Item
-											key={award.name}
-											showIcon={false}
-											className="flex items-end"
-										>
-											<span className="sr-only">{award.name}</span>
-											{award.image}
-										</List.Item>
-									))}
-								</List.Grid>
-							</motion.div>
-						</Grid.Item>
+					<Grid as="ol" gap="gap-8 md:gap-y-10" className={className ?? ''}>
+						{sortedSamples.map(sample => (
+							<motion.li key={sample.slug} variants={fadeUpItemVariants}>
+								<Card
+									as={Link}
+									href={`/work/${sample.slug}`}
+									className="relative pt-0"
+								>
+									<div className="aspect-4/3 overflow-hidden">
+										<CardImage
+											src={sample.metadata.featuredImage}
+											width={720}
+											height={540}
+											sizes="100vw, (min-width: 768px) 50vw"
+											alt=""
+											className="w-full h-full object-cover object-center bg-white transition-transform duration-400 group-hover/card:scale-105"
+										/>
+									</div>
+									<CardContent className="px-0">
+										<CardTitle className="mb-2 text-foreground/75 dark:text-foreground/75 transition-colors group-hover/card:text-foreground dark:group-hover/card:text-foreground">
+											{sample.metadata.title}
+										</CardTitle>
+										<CardDescription className="text-xs font-sans text-pretty opacity-75 transition-opacity duration-400 group-hover/card:opacity-100">
+											{sample.metadata.client}
+										</CardDescription>
+									</CardContent>
+								</Card>
+							</motion.li>
+						))}
 					</Grid>
 				</div>
 			</Section>
