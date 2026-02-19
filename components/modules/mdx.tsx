@@ -81,6 +81,10 @@ const PulledImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
 	);
 };
 
+const PulledContent = (props: ComponentPropsWithoutRef<'div'>) => {
+	return <div className="md:-mx-8 lg:-mx-24" {...props} />;
+};
+
 const Code = ({
 	children,
 	...props
@@ -164,6 +168,7 @@ const defaultMDXComponents: MDXComponents = {
 	h6: createHeading(6),
 	Image: DefaultImage,
 	PulledImage,
+	PulledContent,
 	a: CustomLink,
 	code: Code,
 	Table
