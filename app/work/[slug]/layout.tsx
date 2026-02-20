@@ -1,9 +1,11 @@
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 
-import { getWorkSampleBySlug } from '~/app/work/server-utils';
-import { formatDate } from '~/app/work/utils';
 import JumbotronWork from '~/components/modules/jumbotron/work';
+import WorkSection from '~/components/modules/section/work';
+
+import { getWorkSampleBySlug, getWorkSamples } from '~/app/work/server-utils';
+import { formatDate } from '~/app/work/utils';
 
 type WorkSampleLayoutProps = Readonly<{
 	children: ReactNode;
@@ -18,6 +20,8 @@ const WorkSampleLayout = async ({
 }: WorkSampleLayoutProps) => {
 	const { slug } = await params;
 	const sample = getWorkSampleBySlug(slug);
+	const workSamples = getWorkSamples();
+	const filteredSamples = workSamples.filter(sample => sample.slug !== slug);
 
 	if (!sample) {
 		notFound();
@@ -40,6 +44,12 @@ const WorkSampleLayout = async ({
 					{children}
 				</article>
 			</section>
+
+			<WorkSection
+				title="More work"
+				samples={filteredSamples}
+				className="md:py-24 border-t border-border"
+			/>
 		</div>
 	);
 };

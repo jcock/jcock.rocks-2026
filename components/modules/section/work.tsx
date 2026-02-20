@@ -2,8 +2,6 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import Autoplay from 'embla-carousel-autoplay';
-import Fade from 'embla-carousel-fade';
 import { motion } from 'motion/react';
 import type { Variants } from 'motion/react';
 
@@ -17,6 +15,7 @@ import {
 	CardContent
 } from '~/components/modules/core/card';
 
+import { cn } from '~/lib/utils';
 import { useScrollDirection } from '~/hooks/useScrollDirection';
 import { fadeUpItemVariants } from '~/components/util/animations';
 import type { WorkSample } from '~/app/work/types';
@@ -24,10 +23,16 @@ import type { WorkSample } from '~/app/work/types';
 interface SectionWorkProps {
 	id?: string;
 	className?: string;
+	title?: string;
 	samples: ReadonlyArray<WorkSample>;
 }
 
-const SectionWork = ({ id = 'work', className, samples }: SectionWorkProps) => {
+const SectionWork = ({
+	id = 'work',
+	className,
+	title,
+	samples
+}: SectionWorkProps) => {
 	const scrollDirection = useScrollDirection();
 
 	const sortedSamples = React.useMemo(
@@ -61,10 +66,25 @@ const SectionWork = ({ id = 'work', className, samples }: SectionWorkProps) => {
 		>
 			<Section
 				id={id}
-				className={`grid items-center px-8 md:px-16 py-24 md:py-32 ${className ?? ''}`}
+				className={cn(
+					'grid items-center px-8 md:px-16 py-24 md:py-32',
+					className ?? ''
+				)}
 			>
 				<div className="container px-4">
-					<Grid as="ol" gap="gap-8 md:gap-y-10" className={className ?? ''}>
+					{title && (
+						<Grid>
+							<motion.div
+								variants={fadeUpItemVariants}
+								className="md:col-start-2"
+							>
+								<Section.Title className="mb-12 text-2xl/8! text-muted-foreground">
+									{title}
+								</Section.Title>
+							</motion.div>
+						</Grid>
+					)}
+					<Grid as="ol" gap="gap-8 md:gap-y-10">
 						{sortedSamples.map(sample => (
 							<motion.li key={sample.slug} variants={fadeUpItemVariants}>
 								<Card
