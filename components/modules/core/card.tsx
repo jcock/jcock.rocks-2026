@@ -5,7 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '~/lib/utils';
 
 const cardVariants = cva(
-	'gap-6 overflow-hidden py-6 text-sm shadow-xs has-[>img:first-child]:pt-0 data-[size=sm]:gap-4 data-[size=sm]:py-4 group/card flex flex-col',
+	'gap-6 overflow-hidden py-6 text-sm has-[>img:first-child]:pt-0 data-[size=sm]:gap-4 data-[size=sm]:py-4 group/card flex flex-col',
 	{
 		variants: {
 			variant: {
@@ -16,11 +16,16 @@ const cardVariants = cva(
 			hasBorder: {
 				false: null,
 				true: 'ring-1 ring-foreground/10'
+			},
+			hasShadow: {
+				false: null,
+				true: 'shadow-xs'
 			}
 		},
 		defaultVariants: {
 			variant: 'default',
-			hasBorder: true
+			hasBorder: false,
+			hasShadow: false
 		}
 	}
 );
@@ -37,7 +42,8 @@ function Card<T extends React.ElementType = 'div'>({
 	className,
 	size = 'default',
 	variant = 'default',
-	hasBorder = true,
+	hasBorder = false,
+	hasShadow = false,
 	...props
 }: CardProps<T>) {
 	const Container = as ?? 'div';
@@ -46,7 +52,7 @@ function Card<T extends React.ElementType = 'div'>({
 		<Container
 			data-slot="card"
 			data-size={size}
-			className={cn(cardVariants({ variant, hasBorder }), className)}
+			className={cn(cardVariants({ variant, hasBorder, hasShadow }), className)}
 			{...props}
 		/>
 	);
@@ -76,16 +82,22 @@ function CardImage({ className, alt, ...props }: ImageProps) {
 	);
 }
 
-function CardTitle({ className, ...props }: React.ComponentProps<'div'>) {
+function CardTitle({
+	className,
+	children,
+	...props
+}: React.ComponentProps<'h3'>) {
 	return (
-		<div
+		<h3
 			data-slot="card-title"
 			className={cn(
-				'text-base leading-normal font-medium group-data-[size=sm]/card:text-sm',
+				'text-lg sm:text-base lg:text-xl leading-normal group-data-[size=sm]/card:text-sm',
 				className
 			)}
 			{...props}
-		/>
+		>
+			{children}
+		</h3>
 	);
 }
 

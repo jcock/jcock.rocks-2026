@@ -14,13 +14,14 @@ const NavSocial = () => {
 	const socials = site.social as SocialLink[];
 
 	return (
-		<nav className="flex items-center justify-between md:justify-self-center gap-3 md:w-2/3 py-[2.5vh] px-4 border-t border-foreground/10">
+		<nav className="flex items-center justify-around md:justify-between gap-3">
 			{socials.map(social => (
 				<Button
 					key={social.platform}
-					variant="ghost"
+					variant="fade"
 					size="icon"
 					nativeButton={false}
+					title={social.label}
 					render={
 						<a href={social.url} target="_blank" rel="noreferrer noopener">
 							<span className="sr-only">{social.label}</span>
@@ -30,9 +31,10 @@ const NavSocial = () => {
 				/>
 			))}
 			<Button
-				variant="ghost"
+				variant="fade"
 				size="icon"
 				nativeButton={false}
+				title={site.contact.email.label}
 				render={
 					<a
 						href={site.contact.email.url}

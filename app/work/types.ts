@@ -3,9 +3,11 @@ export type WorkSampleMetadata = {
 	publishedAt: string;
 	client: string;
 	summary: string;
+	siteUrl?: string;
 	image?: string;
 	roles: string[];
 	color: string;
+	featuredImage: string;
 };
 
 export type WorkSample = {

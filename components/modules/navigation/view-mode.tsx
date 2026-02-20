@@ -50,6 +50,7 @@ const ToggleViewMode = () => {
 
 	return (
 		<Toggle
+			variant="outline-fill"
 			aria-label={ariaLabel}
 			pressed={isDarkMode}
 			onPressedChange={handlePressedChange}

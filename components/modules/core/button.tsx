@@ -14,11 +14,14 @@ const buttonVariants = cva(
 				none: '',
 				default: 'bg-primary text-primary-foreground hover:bg-primary/80',
 				outline:
-					'border-border bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 aria-expanded:bg-muted aria-expanded:text-foreground shadow-xs',
+					'border-border bg-background dark:border-input hover:bg-foreground hover:text-background aria-expanded:bg-muted aria-expanded:text-foreground shadow-xs',
+				'outline-fill':
+					'border border-border bg-background text-foreground/50 hover:bg-muted hover:text-foreground',
 				secondary:
 					'bg-secondary text-secondary-foreground hover:bg-secondary/70 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground',
 				ghost:
 					'hover:bg-muted hover:text-foreground dark:hover:bg-muted/70 aria-expanded:bg-muted aria-expanded:text-foreground',
+				fade: 'opacity-70 hover:opacity-100',
 				destructive:
 					'bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive focus-visible:border-destructive/40 dark:hover:bg-destructive/30',
 				link: '[font-family:inherit]! text-primary hover:text-primary/80',
@@ -29,6 +32,8 @@ const buttonVariants = cva(
 				none: '',
 				default:
 					'h-9 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
+				'2xs':
+					"h-6 gap-1 px-2 text-2xs has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
 				xs: "h-6 gap-1 px-2 text-xs has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
 				sm: 'h-8 gap-1 px-2.5 text-xs has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5',
 				lg: 'h-10 gap-1.5 px-3.5 text-base has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3',

@@ -4,12 +4,42 @@ import type { WorkSample, WorkSampleMetadata } from '~/app/work/types';
 
 const WORK_SAMPLES_DIR = path.join(process.cwd(), 'app', 'work', 'samples');
 
-const parseRolesValue = (value: string) => {
-	return value
-		.replace(/^\[(.*)\]$/, '$1')
-		.split(',')
-		.map(role => role.trim().replace(/^['"](.*)['"]$/, '$1'))
+const parseArrayValue = (value: string) => {
+	const normalizedValue = value.trim();
+	if (!normalizedValue) {
+		return [];
+	}
+
+	const quotedValueMatches = Array.from(
+		normalizedValue.matchAll(/['"]([^'"]+)['"]/g)
+	)
+		.map(match => match[1]?.trim() ?? '')
 		.filter(Boolean);
+
+	if (quotedValueMatches.length > 0) {
+		return quotedValueMatches;
+	}
+
+	return normalizedValue
+		.replace(/^\[/, '')
+		.replace(/\]$/, '')
+		.split(',')
+		.map(entry => entry.trim().replace(/^['"](.*)['"]$/, '$1'))
+		.filter(Boolean);
+};
+
+const isStringMetadataKey = (
+	key: string
+): key is Exclude<keyof WorkSampleMetadata, 'roles'> => {
+	return (
+		key === 'title' ||
+		key === 'publishedAt' ||
+		key === 'client' ||
+		key === 'summary' ||
+		key === 'siteUrl' ||
+		key === 'featuredImage' ||
+		key === 'color'
+	);
 };
 
 const parseFrontmatter = (fileContent: string) => {
@@ -28,21 +58,69 @@ const parseFrontmatter = (fileContent: string) => {
 	const frontmatterLines = frontmatterBlock.trim().split('\n').filter(Boolean);
 	const metadata: Partial<WorkSampleMetadata> = {};
 
-	for (const line of frontmatterLines) {
-		const [rawKey, ...rawValue] = line.split(':');
-		if (!rawKey) {
+	for (let lineIndex = 0; lineIndex < frontmatterLines.length; lineIndex += 1) {
+		const line = frontmatterLines[lineIndex];
+		if (!line) {
 			continue;
 		}
-		const key = rawKey.trim() as keyof WorkSampleMetadata;
-		let value = rawValue.join(':').trim();
-		value = value.replace(/^['"](.*)['"]$/, '$1');
+
+		const separatorIndex = line.indexOf(':');
+		if (separatorIndex === -1) {
+			continue;
+		}
+		const key = line.slice(0, separatorIndex).trim();
+		let value = line.slice(separatorIndex + 1).trim();
 
 		if (key === 'roles') {
-			metadata.roles = parseRolesValue(value);
+			if (!value && frontmatterLines[lineIndex + 1]?.trim().startsWith('-')) {
+				const blockArrayValues: string[] = [];
+
+				while (lineIndex + 1 < frontmatterLines.length) {
+					const nextLine = frontmatterLines[lineIndex + 1]?.trim() || '';
+					if (!nextLine.startsWith('-')) {
+						break;
+					}
+
+					lineIndex += 1;
+					const listEntry = nextLine
+						.replace(/^-\s*/, '')
+						.trim()
+						.replace(/^['"](.*)['"]$/, '$1');
+
+					if (listEntry) {
+						blockArrayValues.push(listEntry);
+					}
+				}
+
+				metadata[key] = blockArrayValues;
+				continue;
+			}
+
+			if (!value && frontmatterLines[lineIndex + 1]?.trim().startsWith('[')) {
+				lineIndex += 1;
+				value = frontmatterLines[lineIndex]?.trim() || '';
+			}
+
+			if (value.startsWith('[') && !value.includes(']')) {
+				while (lineIndex + 1 < frontmatterLines.length) {
+					lineIndex += 1;
+					const arrayLine = frontmatterLines[lineIndex]?.trim() || '';
+					value = `${value} ${arrayLine}`.trim();
+					if (arrayLine.includes(']')) {
+						break;
+					}
+				}
+			}
+
+			metadata[key] = parseArrayValue(value);
 			continue;
 		}
 
-		metadata[key] = value;
+		value = value.replace(/^['"](.*)['"]$/, '$1');
+
+		if (isStringMetadataKey(key)) {
+			metadata[key] = value;
+		}
 	}
 
 	return {
@@ -75,9 +153,11 @@ const normalizeMetadata = (
 		publishedAt: metadata.publishedAt || new Date(0).toISOString(),
 		client: metadata.client || '',
 		summary: metadata.summary || '',
+		siteUrl: metadata.siteUrl || '',
 		image: metadata.image,
 		roles: metadata.roles || [],
-		color: metadata.color || '#2095f0'
+		color: metadata.color || '#2095f0',
+		featuredImage: metadata.featuredImage || ''
 	};
 };
 

@@ -10,7 +10,7 @@ import Grid from '~/components/modules/grid';
 import Icon from '~/components/modules/icon';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
-import { fadeItemVariants } from '~/components/util/animations';
+import { fadeUpItemVariants } from '~/components/util/animations';
 
 type ListObjectItem = {
 	id?: string | number;
@@ -198,7 +198,7 @@ export const ListItems = ({
 		return (
 			<motion.li
 				key={getListItemKey(item, index)}
-				variants={fadeItemVariants}
+				variants={fadeUpItemVariants}
 				className="flex items-start gap-2"
 			>
 				<Icon
@@ -225,7 +225,7 @@ export const ListItem = ({
 }: ListItemProps) => {
 	return (
 		<motion.li
-			variants={fadeItemVariants}
+			variants={fadeUpItemVariants}
 			className={twMerge('flex items-start gap-2', className ?? '')}
 			{...rest}
 		>
