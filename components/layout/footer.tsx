@@ -43,7 +43,7 @@ const Footer = () => {
 			variants={containerVariants}
 			initial="hidden"
 			whileInView="show"
-			viewport={{ once: false, amount: 0.4 }}
+			viewport={{ once: false, amount: 0.2 }}
 			className="relative flex flex-col border-t border-border"
 		>
 			<div className="-translate-y-1/2 container px-8 md:px-16 flex justify-end gap-1">

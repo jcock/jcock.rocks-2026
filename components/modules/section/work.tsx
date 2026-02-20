@@ -57,7 +57,7 @@ const SectionWork = ({ id = 'work', className, samples }: SectionWorkProps) => {
 			variants={containerVariants}
 			initial="hidden"
 			whileInView="show"
-			viewport={{ once: false, amount: 0.4 }}
+			viewport={{ once: false, amount: 0.2 }}
 		>
 			<Section
 				id={id}
