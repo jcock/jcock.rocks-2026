@@ -8,7 +8,7 @@ const Navbar = () => {
 	return (
 		<div className="px-8 md:px-16 py-2 container text-foreground">
 			<Grid columns="grid-cols-2" gap="md:gap-2">
-				<Grid.Item>
+				<Grid.Item className="mt-0.75">
 					<Brand />
 				</Grid.Item>
 				<nav className="flex flex-row md:flex-col justify-end md:justify-start md:items-start gap-4 md:gap-0">
