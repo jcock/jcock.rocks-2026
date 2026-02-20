@@ -19,6 +19,17 @@ const nextConfig = {
 	experimental: {
 		scrollRestoration: true
 	},
+	images: {
+		deviceSizes: [640, 750, 1080, 1920, 2048, 3840],
+		qualities: [25, 50, 75, 90, 100],
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'cdn.flowplayer.com',
+				pathname: '/**/*'
+			}
+		]
+	},
 	async redirects() {
 		return redirects;
 	},
