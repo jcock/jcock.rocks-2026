@@ -45,7 +45,7 @@ const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 			variants={containerVariants}
 			initial="hidden"
 			whileInView="show"
-			viewport={{ once: false, amount: 0.4 }}
+			viewport={{ once: false, amount: 0.15 }}
 		>
 			<Section
 				id={id}
