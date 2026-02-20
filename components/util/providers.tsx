@@ -21,14 +21,8 @@ export function Provider({ children }: { children: ReactNode }) {
 			<ViewTransitionsProvider>
 				<ScrollToTopOnNavigation />
 				<SectionProvider>
-					<ReactLenis
-						root={true}
-						options={{
-							lerp: 0.15
-						}}
-					>
-						{children}
-					</ReactLenis>
+					<ReactLenis root />
+					{children}
 					<Toaster />
 				</SectionProvider>
 			</ViewTransitionsProvider>
