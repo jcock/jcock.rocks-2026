@@ -4,7 +4,7 @@ import site from '~/data/site.json';
 
 const Brand = () => {
 	return (
-		<Link href="/" className="group block mt-2.75 pointer-events-auto">
+		<Link href="/" className="group inline-block mt-2.75 pointer-events-auto">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 800 610"
