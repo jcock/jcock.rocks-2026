@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { highlight } from 'sugar-high';
 
+import SlideIn from '~/components/modules/animations/slidein';
+
 type TableProps = {
 	data: {
 		headers: string[];
@@ -75,14 +77,31 @@ const DefaultImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
 
 const PulledImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
 	return (
-		<div className="md:-mx-8 lg:-mx-24">
+		<SlideIn className="md:-mx-8 lg:-mx-24">
 			<Image className="w-full h-auto" {...props} />
-		</div>
+		</SlideIn>
 	);
 };
 
 const PulledContent = (props: ComponentPropsWithoutRef<'div'>) => {
 	return <div className="md:-mx-8 lg:-mx-24" {...props} />;
+};
+
+const Device = (props: ComponentPropsWithoutRef<'div'>) => {
+	const { children, ...rest } = props;
+	return (
+		<SlideIn>
+			<div className="relative not-prose">
+				<div
+					className="lg:-mx-16 p-6 pt-8 border border-border rounded-4xl md:rounded-b-none before:absolute before:top-3 before:left-1/2 before:-translate-x-1/2 before:size-2 before:border before:border-border before:rounded-full"
+					{...rest}
+				>
+					<div className="border border-border">{children}</div>
+				</div>
+				<i className="hidden md:block md:-mx-8 lg:-mx-24 border border-border rounded-b-4xl h-8 after:absolute after:bottom-5 after:left-1/2 after:-translate-x-1/2 after:w-1/4 after:h-3 after:border after:border-t-0 after:border-border after:rounded-b-full" />
+			</div>
+		</SlideIn>
+	);
 };
 
 const Code = ({
@@ -169,6 +188,7 @@ const defaultMDXComponents: MDXComponents = {
 	Image: DefaultImage,
 	PulledImage,
 	PulledContent,
+	Device,
 	a: CustomLink,
 	code: Code,
 	Table

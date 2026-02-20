@@ -28,6 +28,7 @@ const WorkSampleLayout = async ({
 			<JumbotronWork
 				title={sample.metadata.title}
 				summary={sample.metadata.summary}
+				siteUrl={sample.metadata.siteUrl}
 				client={sample.metadata.client}
 				year={formatDate(sample.metadata.publishedAt)}
 				roles={sample.metadata.roles}

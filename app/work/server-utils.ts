@@ -36,6 +36,7 @@ const isStringMetadataKey = (
 		key === 'publishedAt' ||
 		key === 'client' ||
 		key === 'summary' ||
+		key === 'siteUrl' ||
 		key === 'featuredImage' ||
 		key === 'color'
 	);
@@ -152,6 +153,7 @@ const normalizeMetadata = (
 		publishedAt: metadata.publishedAt || new Date(0).toISOString(),
 		client: metadata.client || '',
 		summary: metadata.summary || '',
+		siteUrl: metadata.siteUrl || '',
 		image: metadata.image,
 		roles: metadata.roles || [],
 		color: metadata.color || '#2095f0',

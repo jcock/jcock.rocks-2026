@@ -6,6 +6,8 @@ import type { Variants } from 'motion/react';
 
 import Jumbotron from '~/components/modules/jumbotron';
 import Grid from '~/components/modules/grid';
+import { Button } from '~/components/modules/core/button';
+import Icon from '~/components/modules/icon';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
 import { fadeUpItemVariants } from '~/components/util/animations';
@@ -20,13 +22,14 @@ interface JumbotronWorkProps {
 	year: string;
 	roles: string[];
 	color?: string;
+	siteUrl?: string;
 }
 
 const JumbotronWork = ({
 	title,
 	summary,
 	client,
-	year,
+	siteUrl,
 	roles,
 	color
 }: JumbotronWorkProps) => {
@@ -79,23 +82,45 @@ const JumbotronWork = ({
 				</Grid>
 			</Jumbotron.Body>
 
-			{(year || roles.length > 0) && (
-				<div className="mt-auto py-4 bg-background border-y border-foreground/10">
+			{(siteUrl || roles.length > 0) && (
+				<div className="mt-auto py-4 bg-background border-y border-border">
 					<motion.div
 						variants={fadeUpItemVariants}
-						className="flex justify-between gap-8 container px-[10dvw] text-2xs text-foreground uppercase tracking-widest font-sans"
+						className="flex justify-between gap-4 md:gap-8 container px-[10dvw] text-2xs text-muted-foreground uppercase tracking-widest font-sans"
 					>
 						{roles.length > 0 && (
-							<motion.ul
+							<motion.div
 								variants={fadeUpItemVariants}
-								className="flex items-center flex-wrap *:after:content-[',_'] *:last:after:content-[''] *:pr-1 *:last:pr-0"
+								className="flex gap-1 w-full"
 							>
-								{roles.map(role => (
-									<li key={role}>{role}</li>
-								))}
-							</motion.ul>
+								<Icon
+									icon="gravity-ui:gear"
+									size="size-3.5"
+									className="mt-0.5"
+								/>
+								<ul className="flex items-center flex-wrap *:after:content-[',_'] *:last:after:content-[''] *:pr-1 *:last:pr-0">
+									{roles.map(role => (
+										<li key={role}>{role}</li>
+									))}
+								</ul>
+							</motion.div>
 						)}
-						<time dateTime={year}>{year}</time>
+						{siteUrl && (
+							<motion.div variants={fadeUpItemVariants}>
+								<Button
+									nativeButton={false}
+									variant="link"
+									size="link"
+									className="uppercase text-muted-foreground"
+									render={
+										<a href={siteUrl} target="_blank" rel="noreferrer">
+											<Icon icon="mdi:external-link" size="size-3.5" />
+											Visit
+										</a>
+									}
+								/>
+							</motion.div>
+						)}
 					</motion.div>
 				</div>
 			)}
