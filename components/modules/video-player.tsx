@@ -1,5 +1,7 @@
+'use client';
+
 import type { ComponentProps, ReactNode } from 'react';
-import { forwardRef, useRef, useState, useEffect } from 'react';
+import * as React from 'react';
 import ReactPlayer from 'react-player';
 
 import Icon from '~/components/modules/icon';
@@ -29,7 +31,7 @@ type VideoPlayerProps = Omit<
 	playIcon?: ReactNode;
 };
 
-const VideoPlayer = forwardRef<HTMLDivElement, VideoPlayerProps>(
+const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
 	(
 		{
 			url,
@@ -50,13 +52,13 @@ const VideoPlayer = forwardRef<HTMLDivElement, VideoPlayerProps>(
 		ref
 	) => {
 		const [lightMode] =
-			useState<ReactPlayerComponentProps['light']>(placeholder);
-		const [isPlaying, setIsPlaying] = useState(autoPlay);
-		const [pageLoaded, setPageLoaded] = useState(false);
-		const divRef = useRef<HTMLDivElement | null>(null);
-		const [lastPercentProgress, setLastPercentProgress] = useState(0);
+			React.useState<ReactPlayerComponentProps['light']>(placeholder);
+		const [isPlaying, setIsPlaying] = React.useState(autoPlay);
+		const [pageLoaded, setPageLoaded] = React.useState(false);
+		const divRef = React.useRef<HTMLDivElement | null>(null);
+		const [lastPercentProgress, setLastPercentProgress] = React.useState(0);
 
-		useEffect(() => {
+		React.useEffect(() => {
 			if (isBrowser) {
 				setPageLoaded(true);
 			}
@@ -143,11 +145,11 @@ const VideoPlayer = forwardRef<HTMLDivElement, VideoPlayerProps>(
 							muted={muted}
 							playIcon={
 								playIcon ?? (
-									<button className="bg-blue-400 bg-opacity-70 p-1 rounded-full transition-colors hover:bg-opacity-90 focus:bg-opacity-90">
+									<button className="transition-opacity hover:opacity-90 focus:opacity-90">
 										<span className="sr-only">Play</span>
 										<Icon
 											icon="fe:play"
-											size="size-12"
+											size="size-16"
 											className="text-white drop-shadow-md translate-x-1"
 										/>
 									</button>

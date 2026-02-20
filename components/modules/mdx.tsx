@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { highlight } from 'sugar-high';
 
 import SlideIn from '~/components/modules/animations/slidein';
+import VideoPlayer from '~/components/modules/video-player';
+import Grid from '~/components/modules/grid';
 
 type TableProps = {
 	data: {
@@ -104,6 +106,22 @@ const Device = (props: ComponentPropsWithoutRef<'div'>) => {
 	);
 };
 
+const Video = (props: ComponentPropsWithoutRef<typeof VideoPlayer>) => {
+	return <VideoPlayer {...props} />;
+};
+
+const GridContainer = (props: ComponentPropsWithoutRef<typeof Grid>) => {
+	return <Grid {...props} />;
+};
+
+const GridItem = (props: ComponentPropsWithoutRef<typeof Grid.Item>) => {
+	return (
+		<SlideIn>
+			<Grid.Item {...props} />
+		</SlideIn>
+	);
+};
+
 const Code = ({
 	children,
 	...props
@@ -189,6 +207,9 @@ const defaultMDXComponents: MDXComponents = {
 	PulledImage,
 	PulledContent,
 	Device,
+	Video,
+	Grid: GridContainer,
+	GridItem,
 	a: CustomLink,
 	code: Code,
 	Table
