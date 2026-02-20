@@ -49,7 +49,7 @@ const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 		>
 			<Section
 				id={id}
-				className={`grid items-center px-8 md:px-16 pt-64 pb-20 ${className ?? ''}`}
+				className={`grid items-center px-8 md:px-16 pt-24 sm:pt-64 pb-20 ${className ?? ''}`}
 			>
 				<div className="container px-4 space-y-32">
 					<Grid columns="lg:grid-cols-2">
