@@ -27,6 +27,7 @@ const WorkSampleLayout = async ({
 		<div>
 			<JumbotronWork
 				title={sample.metadata.title}
+				summary={sample.metadata.summary}
 				client={sample.metadata.client}
 				year={formatDate(sample.metadata.publishedAt)}
 				roles={sample.metadata.roles}
@@ -35,11 +36,6 @@ const WorkSampleLayout = async ({
 
 			<section className="container px-4 my-20">
 				<article className="mx-auto prose prose-headings:font-medium dark:prose-invert">
-					{sample.metadata.summary && (
-						<p className="text-xl/8 md:text-2xl/10 font-light text-gray-600 dark:text-gray-400">
-							{sample.metadata.summary}
-						</p>
-					)}
 					{children}
 				</article>
 			</section>

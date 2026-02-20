@@ -60,7 +60,10 @@ export const JumbotronTitle = ({
 }: JumbotronTitleProps) => {
 	return (
 		<h1
-			className={twMerge('text-2xl sm:text-4xl text-pretty', className ?? '')}
+			className={twMerge(
+				'text-3xl/10 md:text-4xl/12 xl:text-5xl/14 text-muted-foreground text-pretty',
+				className ?? ''
+			)}
 			{...rest}
 		>
 			{children}
