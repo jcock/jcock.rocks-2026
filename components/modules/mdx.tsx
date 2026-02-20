@@ -122,6 +122,10 @@ const GridItem = (props: ComponentPropsWithoutRef<typeof Grid.Item>) => {
 	);
 };
 
+const SlideInItem = (props: ComponentPropsWithoutRef<typeof SlideIn>) => {
+	return <SlideIn {...props} />;
+};
+
 const Code = ({
 	children,
 	...props
@@ -210,6 +214,7 @@ const defaultMDXComponents: MDXComponents = {
 	Video,
 	Grid: GridContainer,
 	GridItem,
+	SlideIn: SlideInItem,
 	a: CustomLink,
 	code: Code,
 	Table
