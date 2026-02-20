@@ -2,6 +2,8 @@
 
 import type { ReactNode } from 'react';
 
+import { ReactLenis } from 'lenis/react';
+
 import { ThemeProvider } from '~/components/util/context/theme';
 import { ScrollToTopOnNavigation } from '~/components/util/context/scroll-to-top-on-navigation';
 import { ViewTransitionsProvider } from '~/components/util/context/view-transitions';
@@ -19,7 +21,14 @@ export function Provider({ children }: { children: ReactNode }) {
 			<ViewTransitionsProvider>
 				<ScrollToTopOnNavigation />
 				<SectionProvider>
-					{children}
+					<ReactLenis
+						root={true}
+						options={{
+							lerp: 0.15
+						}}
+					>
+						{children}
+					</ReactLenis>
 					<Toaster />
 				</SectionProvider>
 			</ViewTransitionsProvider>
