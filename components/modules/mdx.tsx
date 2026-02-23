@@ -95,10 +95,12 @@ const Device = (props: ComponentPropsWithoutRef<'div'>) => {
 		<SlideIn>
 			<div className="relative not-prose">
 				<div
-					className="lg:-mx-16 p-4 sm:p-6 md:pt-8 border border-border rounded-4xl md:rounded-b-none before:hidden md:before:block before:absolute before:top-3 before:left-1/2 before:-translate-x-1/2 before:size-2 before:border before:border-border before:rounded-full"
+					className="lg:-mx-16 p-2.5 sm:p-4 md:p-6 md:pt-8 border border-border rounded-4xl md:rounded-b-none before:hidden md:before:block before:absolute before:top-3 before:left-1/2 before:-translate-x-1/2 before:size-2 before:border before:border-border before:rounded-full sm:after:hidden after:absolute after:top-1/2 after:left-4.5 after:-translate-y-1/2 after:w-3 after:h-1/5 after:bg-background after:border after:border-border after:rounded-full"
 					{...rest}
 				>
-					<div className="border border-border">{children}</div>
+					<div className="border border-border rounded-xl sm:rounded-xl md:rounded-none overflow-hidden">
+						{children}
+					</div>
 				</div>
 				<i className="hidden md:block md:-mx-8 lg:-mx-24 border border-border rounded-b-4xl h-8 after:absolute after:bottom-5 after:left-1/2 after:-translate-x-1/2 after:w-1/4 after:h-3 after:border after:border-t-0 after:border-border after:rounded-b-full" />
 			</div>
