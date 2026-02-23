@@ -40,7 +40,7 @@ const WorkSampleLayout = async ({
 			/>
 
 			<section className="container px-8 md:px-16 my-20">
-				<article className="mx-auto prose prose-headings:font-medium dark:prose-invert">
+				<article className="mx-auto prose prose-headings:font-medium dark:prose-invert *:text-pretty">
 					{children}
 				</article>
 			</section>
