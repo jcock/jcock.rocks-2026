@@ -43,7 +43,7 @@ const SectionAbout = ({ id = 'about', className }: SectionAboutProps) => {
 			speed: 1.4,
 			stopOnInteraction: false,
 			stopOnFocusIn: false,
-			stopOnMouseEnter: false
+			stopOnMouseEnter: true
 		})
 	);
 
