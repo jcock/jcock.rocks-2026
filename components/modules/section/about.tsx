@@ -16,7 +16,7 @@ import { fadeUpItemVariants } from '~/components/util/animations';
 
 import clients from '~/data/clients';
 
-import ImagePirate from '~/images/jcock-pirate.png';
+import ImagePirate from '~/images/jcock-pirate-transparent.png';
 import AwardWebby from '~/images/inline/awards/webby.svg';
 import AwardAaa from '~/images/inline/awards/aaa.svg';
 import AwardWebAward from '~/images/inline/awards/webaward.svg';
