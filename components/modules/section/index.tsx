@@ -3,6 +3,8 @@
 import type { ComponentProps, ElementType, ReactNode } from 'react';
 import { InView } from 'react-intersection-observer';
 
+import { cn } from '~/lib/utils';
+
 import useSectionTracker from '~/hooks/useSectionTracker';
 
 const isBrowser = typeof window !== 'undefined';
@@ -62,7 +64,10 @@ export const SectionTitle = ({
 
 	return (
 		<Heading
-			className={`mb-4 text-3xl/10 md:text-4xl/12 xl:text-5xl/14 text-pretty lg:text-balance ${className ?? ''}`}
+			className={cn(
+				'mb-4 text-3xl/10 md:text-4xl/12 xl:text-5xl/14 text-pretty lg:text-balance',
+				className ?? ''
+			)}
 		>
 			{children}
 		</Heading>

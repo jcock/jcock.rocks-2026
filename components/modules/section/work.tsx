@@ -103,7 +103,10 @@ const SectionWork = ({
 										/>
 									</div>
 									<CardContent className="px-0">
-										<CardTitle className="mb-2 text-foreground/75 dark:text-foreground/75 transition-colors group-hover/card:text-foreground dark:group-hover/card:text-foreground">
+										<CardTitle
+											as={title ? 'h3' : 'h2'}
+											className="mb-2 text-foreground/75 dark:text-foreground/75 transition-colors group-hover/card:text-foreground dark:group-hover/card:text-foreground"
+										>
 											{sample.metadata.title}
 										</CardTitle>
 										<CardDescription className="text-xs font-sans text-pretty opacity-75 transition-opacity duration-400 group-hover/card:opacity-100">

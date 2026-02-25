@@ -82,13 +82,20 @@ function CardImage({ className, alt, ...props }: ImageProps) {
 	);
 }
 
-function CardTitle({
+type CardTitleProps<T extends React.ElementType = 'h3'> = {
+	as?: T;
+	children?: React.ReactNode;
+} & React.ComponentPropsWithoutRef<T>;
+
+function CardTitle<T extends React.ElementType = 'h3'>({
+	as,
 	className,
 	children,
 	...props
-}: React.ComponentProps<'h3'>) {
+}: CardTitleProps<T>) {
+	const Heading = as ?? 'h3';
 	return (
-		<h3
+		<Heading
 			data-slot="card-title"
 			className={cn(
 				'text-lg sm:text-base lg:text-xl leading-normal group-data-[size=sm]/card:text-sm',
@@ -97,7 +104,7 @@ function CardTitle({
 			{...props}
 		>
 			{children}
-		</h3>
+		</Heading>
 	);
 }
 
