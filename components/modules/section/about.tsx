@@ -243,6 +243,7 @@ const SectionAbout = ({ className }: SectionAboutProps) => {
 						<List.Grid
 							columns="grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
 							gap="gap-0"
+							className="border-r border-b border-border"
 						>
 							{clients.map(client => {
 								const ClientLogo = client.logo;
@@ -253,7 +254,7 @@ const SectionAbout = ({ className }: SectionAboutProps) => {
 										className="group/list-item"
 									>
 										<div
-											className="aspect-square grid place-items-center border border-border transition-colors duration-300 group-hover/list-item:bg-(--client-color)"
+											className="aspect-square grid place-items-center border-t border-l border-border transition-colors duration-300 group-hover/list-item:text-white group-hover/list-item:bg-(--client-color)"
 											style={
 												{
 													'--client-color': client.color
