@@ -93,7 +93,7 @@ const Footer = () => {
 			</div>
 
 			<div className="overflow-hidden">
-				<div className="-mx-6 translate-y-1/10 opacity-10">
+				<div className="-mx-6 translate-y-1/10">
 					<FooterBrand />
 				</div>
 			</div>
