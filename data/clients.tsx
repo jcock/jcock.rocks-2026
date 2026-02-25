@@ -28,149 +28,152 @@ const Clients = [
 	{
 		id: 'adventure-aquarium',
 		name: 'Adventure Aquarium',
-		logo: (
-			<AdventureAquarium
-				role="img"
-				aria-hidden="true"
-				className="w-auto h-full"
-			/>
-		)
+		logo: AdventureAquarium,
+		color: '#01a7e1'
 	},
 	{
 		id: 'cannondale',
 		name: 'Cannondale',
-		logo: <Cannondale role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Cannondale,
+		color: '#8dc63f'
 	},
-	{
-		id: 'danaher',
-		name: 'Danaher',
-		logo: <Danaher role="img" aria-hidden="true" className="w-auto h-full" />
-	},
+	// {
+	// 	id: 'danaher',
+	// 	name: 'Danaher',
+	// 	logo: Danaher
+	// 	color: '#005699'
+	// },
 	{
 		id: 'dart',
 		name: 'Dart',
-		logo: <Dart role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Dart,
+		color: '#0b1f8f'
 	},
 	{
 		id: 'drexel',
-		name: 'Drexel',
-		logo: <Drexel role="img" aria-hidden="true" className="w-auto h-full" />
+		name: 'Drexel University',
+		logo: Drexel,
+		color: '#092a4d'
 	},
 	{
 		id: 'ge',
 		name: 'GE',
-		logo: <Ge role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Ge,
+		color: '#3b73b9'
 	},
 	{
 		id: 'ibx',
-		name: 'IBX',
-		logo: <Ibx role="img" aria-hidden="true" className="w-auto h-full" />
+		name: 'Independence Blue Cross',
+		logo: Ibx,
+		color: '#0093d0'
 	},
 	{
 		id: 'jcpenney',
 		name: 'JCPenney',
-		logo: <Jcpenney role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Jcpenney,
+		color: '#d7191f'
 	},
 	{
 		id: 'kaiser-permanente',
 		name: 'Kaiser Permanente',
-		logo: (
-			<KaiserPermanente
-				role="img"
-				aria-hidden="true"
-				className="w-auto h-full"
-			/>
-		)
+		logo: KaiserPermanente,
+		color: '#0079b3'
 	},
 	{
 		id: 'komen',
-		name: 'Komen',
-		logo: <Komen role="img" aria-hidden="true" className="w-auto h-full" />
+		name: 'Susan G. Komen',
+		logo: Komen,
+		color: '#ed40a9'
 	},
 	{
 		id: 'lasalle',
-		name: 'LaSalle',
-		logo: <LaSalle role="img" aria-hidden="true" className="w-auto h-full" />
+		name: 'LaSalle University',
+		logo: LaSalle,
+		color: '#003366'
 	},
 	{
 		id: 'lavazza',
 		name: 'Lavazza',
-		logo: <Lavazza role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Lavazza,
+		color: '#032a4e'
 	},
 	{
 		id: 'leica',
 		name: 'Leica',
-		logo: <Leica role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Leica,
+		color: '#ed1c25'
 	},
 	{
 		id: 'liberty-sport',
-		name: 'Liberty Sport',
-		logo: (
-			<LibertySport role="img" aria-hidden="true" className="w-auto h-full" />
-		)
+		name: 'Liberty Sport Eyewear',
+		logo: LibertySport,
+		color: '#ed1c2a'
 	},
 	{
 		id: 'lotto-america',
 		name: 'Lotto America',
-		logo: (
-			<LottoAmerica role="img" aria-hidden="true" className="w-auto h-full" />
-		)
+		logo: LottoAmerica,
+		color: '#ee3125'
 	},
 	{
 		id: 'mitsubishi',
 		name: 'Mitsubishi',
-		logo: <Mitsubishi role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Mitsubishi,
+		color: '#ed1c25'
 	},
 	{
 		id: 'moar',
-		name: 'Moar',
-		logo: <Moar role="img" aria-hidden="true" className="w-auto h-full" />
+		name: 'Museum of the American Revolution',
+		logo: Moar,
+		color: '#254468'
 	},
 	{
 		id: 'nemours',
-		name: 'Nemours',
-		logo: <Nemours role="img" aria-hidden="true" className="w-auto h-full" />
+		name: 'Nemours Children’s Hospital',
+		logo: Nemours,
+		color: '#319c88'
 	},
 	{
 		id: 'olympus',
 		name: 'Olympus',
-		logo: <Olympus role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Olympus,
+		color: '#1c4791'
 	},
 	{
 		id: 'phoenix-childrens',
-		name: 'Phoenix Childrens',
-		logo: (
-			<PhoenixChildrens
-				role="img"
-				aria-hidden="true"
-				className="w-auto h-full"
-			/>
-		)
+		name: 'Phoenix Children’s Hospital',
+		logo: PhoenixChildrens,
+		color: '#ea0029'
 	},
 	{
 		id: 'siemens',
 		name: 'Siemens',
-		logo: <Siemens role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Siemens,
+		color: '#00aaa5'
 	},
 	{
 		id: 'sunoco',
 		name: 'Sunoco',
-		logo: <Sunoco role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Sunoco,
+		color: '#20396f'
 	},
 	{
 		id: 'temple',
-		name: 'Temple',
-		logo: <Temple role="img" aria-hidden="true" className="w-auto h-full" />
+		name: 'Temple University',
+		logo: Temple,
+		color: '#a41e36'
 	},
 	{
 		id: 'usciences',
-		name: 'USciences',
-		logo: <USciences role="img" aria-hidden="true" className="w-auto h-full" />
+		name: 'University of the Sciences',
+		logo: USciences,
+		color: '#842b37'
 	},
 	{
 		id: 'vanguard',
 		name: 'Vanguard',
-		logo: <Vanguard role="img" aria-hidden="true" className="w-auto h-full" />
+		logo: Vanguard,
+		color: '#96151d'
 	}
 ];
 
