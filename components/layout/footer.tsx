@@ -86,7 +86,13 @@ const Footer = () => {
 						className="md:order-first md:row-start-2"
 					>
 						<p className="text-2xs text-foreground/50 dark:text-foreground/60 text-center md:text-left tabular-nums">
-							© {new Date().getFullYear()} {copyright.name}
+							© {new Date().getFullYear()}{' '}
+							<Link
+								href="/"
+								className="transition-colors hover:text-foreground"
+							>
+								{copyright.name}
+							</Link>
 						</p>
 					</motion.div>
 				</Grid>
