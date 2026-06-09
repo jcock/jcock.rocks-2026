@@ -38,6 +38,23 @@ const nextConfig = {
 			// Keep a single SVG pipeline in Turbopack during `next dev`.
 			'*.svg': svgAsComponentRule
 		}
+	},
+	rewrites: async () => {
+		return {
+			beforeFiles: [
+				{
+					source: '/:path*',
+					destination: '/api/accept-md?path=:path*',
+					has: [
+						{
+							type: 'header',
+							key: 'accept',
+							value: '(.*)text/markdown(.*)'
+						}
+					]
+				}
+			]
+		};
 	}
 };
 
