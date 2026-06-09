@@ -1,0 +1,29 @@
+# Jason Cockerham 🤘 Designer and Developer
+
+> Portfolio of Jason Cockerham, a senior UX/UI designer and full-stack developer based in Delaware, showcasing branding, design, and development work.
+
+Most projects were produced through the agency AB&C. Case studies cover UX/UI design, development, and branding for clients across healthcare, finance, government, and consumer brands.
+
+## Projects
+
+- [AB&C Agency RebrandAB&C](https://jcock.rocks/work/abc): Case study on AB&C agency rebrand and new website, covering UX/UI design and development.
+- [Nobel Biocare RebrandNobel Biocare](https://jcock.rocks/work/nobel-biocare): Case study on Nobel Biocare rebrand repositioning the dental implant brand, covering UX/UI design and development.
+- [Mica. The World’s First MicrohubLeica](https://jcock.rocks/work/leica): Case study on launching Leica Microsystems' Mica microhub product, covering UX/UI design and development.
+- [Help Is HereDelaware Division of Public Health](https://jcock.rocks/work/help-in-here): Case study on Help Is Here treatment-engagement hub for Delaware Division of Public Health, covering UX/UI design and development.
+- [The Dirty TruthDelaware Division of Public Health](https://jcock.rocks/work/dirty-truth): Case study on The Dirty Truth anti-vaping campaign for Delaware Division of Public Health, covering UX/UI design and development.
+- [WSFS Bank Mobile Cash CampaignWSFS Bank](https://jcock.rocks/work/wsfs): Case study on WSFS Bank mobile cash app rollout campaign, covering UX/UI design and development.
+- [Delaware Lottery Website RedesignDelaware Lottery](https://jcock.rocks/work/delaware-lottery): Case study on Delaware Lottery website redesign and integrated campaign, covering UX/UI design and development.
+- [LoriBee BrandingLoriBee Homemade Natural Old-Fashioned Soaps](https://jcock.rocks/work/loribee): Case study on LoriBee natural soaps branding, covering branding and visual design.
+
+## About
+
+- [About](https://jcock.rocks/about): Bio of Jason Cockerham, a Delaware-based UX/UI designer, full-stack developer, and digital strategist.
+
+## Contact
+
+- Email: [jason.cockerham@example.com](mailto:jason.cockerham@example.com)
+- Github: [https://github.com/jcock](https://github.com/jcock)
+- Dribbble: [https://dribbble.com/jcock](https://dribbble.com/jcock)
+- LinkedIn: [http://www.linkedin.com/in/jasoncockerham](http://www.linkedin.com/in/jasoncockerham)
+- Instagram: [https://www.instagram.com/jc0ck](https://www.instagram.com/jc0ck)
+- X: [https://x.com/jcock](https://x.com/jcock)
