@@ -33,7 +33,7 @@ const Brand = () => {
 					d="M596.84 494.36l-16.39 22.18V610h-89.46V294.47h89.46v119.18L647 294l132.14-62.09-123.4 208.35L780.61 610H670.64l-73.8-115.64z"
 				/>
 			</svg>
-			<h1 className="sr-only">{site.title}</h1>
+			<span className="sr-only">{site.title}</span>
 		</Link>
 	);
 };
