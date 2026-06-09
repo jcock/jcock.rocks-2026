@@ -38,7 +38,7 @@ export const Anchor = ({
 		<Link
 			href={href}
 			className={cn(
-				'group block md:inline-block px-3 py-2.5 font-sans text-sm text-foreground/50 transition-colors hover:text-foreground focus:text-foreground pointer-events-auto',
+				'group block md:inline-block px-3 py-2.5 font-sans text-sm text-foreground/65 transition-colors hover:text-foreground focus:text-foreground pointer-events-auto',
 				className ?? '',
 				isActive &&
 					`is-active pointer-events-none text-foreground! underline! decoration-1 underline-offset-4 ${activeClassName ?? ''}`

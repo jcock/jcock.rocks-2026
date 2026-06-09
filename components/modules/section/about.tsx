@@ -72,7 +72,7 @@ const SectionAbout = ({ className }: SectionAboutProps) => {
 					<Grid columns="lg:grid-cols-2">
 						<Grid.Item className="-mt-16 lg:mt-0">
 							<motion.div variants={fadeUpItemVariants} className="mb-8">
-								<Section.Title className="text-foreground/75 dark:text-foreground/50">
+								<Section.Title className="text-foreground/75 dark:text-foreground/65">
 									I like to dabble in design and code.
 								</Section.Title>
 							</motion.div>

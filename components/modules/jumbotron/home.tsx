@@ -37,7 +37,7 @@ const JumbotronHome = () => {
 			<Jumbotron.Body className="px-8 md:px-16 pt-64 pb-12 sm:pb-20">
 				<Grid>
 					<motion.div variants={fadeUpItemVariants} className="md:col-start-2 ">
-						<Jumbotron.Title className="text-2xl/10 md:text-3xl/10 xl:text-4xl/12 text-foreground/75 dark:text-foreground/50">
+						<Jumbotron.Title className="text-2xl/10 md:text-3xl/10 xl:text-4xl/12 text-foreground/75 dark:text-foreground/65">
 							I’m Jason Cockerham and I make internets.
 						</Jumbotron.Title>
 					</motion.div>
