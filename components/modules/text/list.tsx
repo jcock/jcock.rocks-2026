@@ -231,23 +231,11 @@ export const ListItem = ({
 		>
 			{showIcon ? (
 				<>
-					{iconUrl ? (
-						<span
-							className={twMerge(
-								'inline-flex mt-1 text-sky-550',
-								iconSize ?? 'size-4',
-								iconClassName ?? ''
-							)}
-						>
-							<img src={iconUrl} alt="" aria-hidden className="h-full w-full" />
-						</span>
-					) : (
-						<Icon
-							icon={icon ?? 'material-symbols:chevron-right'}
-							size={iconSize ?? 'size-4'}
-							className={twMerge('mt-1 text-sky-550', iconClassName ?? '')}
-						/>
-					)}
+					<Icon
+						icon={icon ?? 'material-symbols:chevron-right'}
+						size={iconSize ?? 'size-4'}
+						className={twMerge('mt-1 text-sky-550', iconClassName ?? '')}
+					/>
 					<div
 						className={twMerge(
 							'w-full text-pretty *:text-pretty',

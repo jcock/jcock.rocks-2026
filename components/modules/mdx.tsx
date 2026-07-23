@@ -73,14 +73,32 @@ const CustomLink = (props: ComponentPropsWithoutRef<'a'>) => {
 	);
 };
 
-const DefaultImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
-	return <Image sizes="100vw" {...props} />;
+// const DefaultImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
+// 	return <Image sizes="100vw" {...props} />;
+// };
+
+// const PulledImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
+// 	return (
+// 		<SlideIn className="md:-mx-8 lg:-mx-24">
+// 			<Image className="w-full h-auto" {...props} />
+// 		</SlideIn>
+// 	);
+// };
+
+const DefaultImage = ({
+	alt,
+	...props
+}: ComponentPropsWithoutRef<typeof Image>) => {
+	return <Image sizes="100vw" alt={alt} {...props} />;
 };
 
-const PulledImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
+const PulledImage = ({
+	alt,
+	...props
+}: ComponentPropsWithoutRef<typeof Image>) => {
 	return (
 		<SlideIn className="md:-mx-8 lg:-mx-24">
-			<Image className="w-full h-auto" {...props} />
+			<Image className="w-full h-auto" alt={alt} {...props} />
 		</SlideIn>
 	);
 };
