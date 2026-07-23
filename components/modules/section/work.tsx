@@ -89,7 +89,7 @@ const SectionWork = ({
 							<motion.li key={sample.slug} variants={fadeUpItemVariants}>
 								<Card
 									as={Link}
-									href={`/work/${sample.slug}#work`}
+									href={`/work/${sample.slug}`}
 									className="relative pt-0"
 								>
 									<div className="aspect-4/3 overflow-hidden">
