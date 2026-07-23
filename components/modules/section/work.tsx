@@ -24,6 +24,7 @@ interface SectionWorkProps {
 	id?: string;
 	className?: string;
 	title?: string;
+	eagerImageCount?: number;
 	samples: ReadonlyArray<WorkSample>;
 }
 
@@ -31,6 +32,7 @@ const SectionWork = ({
 	id = 'work',
 	className,
 	title,
+	eagerImageCount = 0,
 	samples
 }: SectionWorkProps) => {
 	const scrollDirection = useScrollDirection();
@@ -85,7 +87,7 @@ const SectionWork = ({
 						</Grid>
 					)}
 					<Grid as="ol" gap="gap-8 md:gap-y-10">
-						{sortedSamples.map(sample => (
+						{sortedSamples.map((sample, index) => (
 							<motion.li key={sample.slug} variants={fadeUpItemVariants}>
 								<Card
 									as={Link}
@@ -98,6 +100,7 @@ const SectionWork = ({
 											width={720}
 											height={540}
 											sizes="(min-width: 768px) 50vw, 100vw"
+											loading={index < eagerImageCount ? 'eager' : 'lazy'}
 											alt=""
 											className="w-full h-full object-cover object-center bg-white transition-transform duration-400 group-hover/card:scale-105"
 										/>

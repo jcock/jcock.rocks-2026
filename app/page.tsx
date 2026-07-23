@@ -15,7 +15,7 @@ const HomePage = () => {
 			<StructuredData data={structuredData} />
 
 			<JumbotronHome />
-			<WorkSection samples={workSamples} />
+			<WorkSection samples={workSamples} eagerImageCount={1} />
 		</>
 	);
 };
