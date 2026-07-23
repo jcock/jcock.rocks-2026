@@ -73,18 +73,6 @@ const CustomLink = (props: ComponentPropsWithoutRef<'a'>) => {
 	);
 };
 
-// const DefaultImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
-// 	return <Image sizes="100vw" {...props} />;
-// };
-
-// const PulledImage = (props: ComponentPropsWithoutRef<typeof Image>) => {
-// 	return (
-// 		<SlideIn className="md:-mx-8 lg:-mx-24">
-// 			<Image className="w-full h-auto" {...props} />
-// 		</SlideIn>
-// 	);
-// };
-
 const DefaultImage = ({
 	alt,
 	...props
