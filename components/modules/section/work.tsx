@@ -97,7 +97,7 @@ const SectionWork = ({
 											src={sample.metadata.featuredImage}
 											width={720}
 											height={540}
-											sizes="100vw, (min-width: 768px) 50vw"
+											sizes="(min-width: 768px) 50vw, 100vw"
 											alt=""
 											className="w-full h-full object-cover object-center bg-white transition-transform duration-400 group-hover/card:scale-105"
 										/>

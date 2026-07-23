@@ -146,7 +146,7 @@ const SectionAbout = ({ className }: SectionAboutProps) => {
 									src={ImagePirate}
 									alt="An ai generated picture of me as a pirate, holding a kitten."
 									priority
-									sizes="100vw, (min-width: 768px) 50vw"
+									sizes="(min-width: 768px) 50vw, 100vw"
 									className="w-full h-full object-cover object-top grayscale opacity-90 dark:opacity-75"
 								/>
 							</motion.div>
