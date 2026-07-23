@@ -86,7 +86,7 @@ const PulledImage = ({
 }: ComponentPropsWithoutRef<typeof Image>) => {
 	return (
 		<SlideIn className="md:-mx-8 lg:-mx-24">
-			<Image className="w-full h-auto" alt={alt} {...props} />
+			<Image className="w-full h-auto" alt={alt} sizes="100vw" {...props} />
 		</SlideIn>
 	);
 };
