@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 
 import StructuredData from '~/components/util/structured-data';
-import JumbotronHome from '~/components/modules/jumbotron/home';
 import AboutSection from '~/components/modules/section/about';
 import { buildPageMetadata, buildWebPageStructuredData } from '~/lib/seo';
 

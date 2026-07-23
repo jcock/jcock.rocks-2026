@@ -1,10 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
 import { motion } from 'motion/react';
 import type { Variants } from 'motion/react';
 import { formatDistance } from 'date-fns';
-import AutoScroll from 'embla-carousel-auto-scroll';
 import Image from 'next/image';
 
 import Section from '~/components/modules/section';
@@ -12,11 +10,6 @@ import Grid from '~/components/modules/grid';
 import { Button } from '~/components/modules/core/button';
 import Icon from '~/components/modules/icon';
 import List from '~/components/modules/text/list';
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem
-} from '~/components/modules/core/carousel';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
 import { fadeUpItemVariants } from '~/components/util/animations';
@@ -37,15 +30,6 @@ const experienceTime = formatDistance(new Date(2005, 6, 1), new Date());
 
 const SectionAbout = ({ className }: SectionAboutProps) => {
 	const scrollDirection = useScrollDirection();
-	const clientLogosAutoScroll = useRef(
-		AutoScroll({
-			startDelay: 0,
-			speed: 1.4,
-			stopOnInteraction: false,
-			stopOnFocusIn: false,
-			stopOnMouseEnter: true
-		})
-	);
 
 	const containerVariants: Variants = {
 		show: {
