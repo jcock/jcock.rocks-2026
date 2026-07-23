@@ -112,5 +112,12 @@
   },
   "bugs": {
     "url": "https://github.com/jcock/jcock.rocks-2026/issues"
+  },
+  "allowScripts": {
+    "core-js-pure@3.48.0": true,
+    "msw@2.12.9": true,
+    "sharp@0.34.5": true,
+    "sharp@0.33.5": true,
+    "unrs-resolver@1.11.1": true
   }
 }
