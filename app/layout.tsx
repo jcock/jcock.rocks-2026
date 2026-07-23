@@ -20,7 +20,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
 	const gtmId = site.analytics.gtmId;
 
 	return (
-		<html lang="en-US" suppressHydrationWarning>
+		<html lang="en-US" suppressHydrationWarning data-scroll-behavior="smooth">
 			<body className={`${inter.variable} ${notoSerif.variable}`}>
 				{gtmId && process.env.NODE_ENV === 'production' ? (
 					<Script id="google-tag-manager" strategy="afterInteractive">
