@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 import StructuredData from '~/components/util/structured-data';
 import { Button } from '~/components/modules/core/button';
+import { buttonVariantsCn } from '~/components/modules/core/button-variants';
 import { buildPageMetadata, buildWebPageStructuredData } from '~/lib/seo';
 
 import FaceHurt from '~/images/inline/face.hurt.svg';
@@ -37,13 +38,17 @@ const NotFoundPage = () => {
 						page and start fresh.
 					</p>
 
-					<nav className="max-w-xl mx-auto flex flex-wrap justify-center gap-4 font-semibold font-sans">
-						<Button
-							variant="link"
-							hasUnderline
-							nativeButton={false}
-							render={<Link href="/">Work</Link>}
-						/>
+					<nav className="max-w-xl mx-auto flex flex-wrap justify-center gap-4 font-sans">
+						<Link
+							href="/"
+							className={buttonVariantsCn({
+								variant: 'link',
+								size: 'link',
+								hasUnderline: true
+							})}
+						>
+							Home
+						</Link>
 					</nav>
 				</div>
 			</section>

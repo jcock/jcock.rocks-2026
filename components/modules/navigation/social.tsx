@@ -1,4 +1,4 @@
-import { Button } from '~/components/modules/core/button';
+import { buttonVariantsCn } from '~/components/modules/core/button';
 import Icon from '~/components/modules/icon';
 
 import site from '~/data/site.json';
@@ -16,36 +16,34 @@ const NavSocial = () => {
 	return (
 		<nav className="flex items-center justify-around md:justify-between gap-3">
 			{socials.map(social => (
-				<Button
+				<a
 					key={social.platform}
-					variant="fade"
-					size="icon"
-					nativeButton={false}
+					href={social.url}
+					target="_blank"
+					rel="noreferrer noopener"
 					title={social.label}
-					render={
-						<a href={social.url} target="_blank" rel="noreferrer noopener">
-							<span className="sr-only">{social.label}</span>
-							<Icon icon={social.icon} size="size-5" />
-						</a>
-					}
-				/>
+					className={buttonVariantsCn({
+						variant: 'fade',
+						size: 'icon'
+					})}
+				>
+					<span className="sr-only">{social.label}</span>
+					<Icon icon={social.icon} size="size-5" />
+				</a>
 			))}
-			<Button
-				variant="fade"
-				size="icon"
-				nativeButton={false}
+			<a
+				href={site.contact.email.url}
+				target="_blank"
+				rel="noreferrer noopener"
+				className={buttonVariantsCn({
+					variant: 'fade',
+					size: 'icon'
+				})}
 				title={site.contact.email.label}
-				render={
-					<a
-						href={site.contact.email.url}
-						target="_blank"
-						rel="noreferrer noopener"
-					>
-						<span className="sr-only">{site.contact.email.label}</span>
-						<Icon icon={site.contact.email.icon} size="size-5" />
-					</a>
-				}
-			/>
+			>
+				<span className="sr-only">{site.contact.email.label}</span>
+				<Icon icon={site.contact.email.icon} size="size-5" />
+			</a>
 		</nav>
 	);
 };

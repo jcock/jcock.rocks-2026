@@ -7,7 +7,7 @@ import type { Variants } from 'motion/react';
 import Grid from '~/components/modules/grid';
 import NavSocial from '~/components/modules/navigation/social';
 import NavLink from '~/components/modules/navigation/nav-link';
-import { Button } from '~/components/modules/core/button';
+import { buttonVariantsCn } from '~/components/modules/core/button';
 import Icon from '~/components/modules/icon';
 import ViewModeToggle from '~/components/modules/navigation/view-mode';
 
@@ -48,21 +48,19 @@ const Footer = () => {
 		>
 			<div className="-translate-y-1/2 container px-8 md:px-16 flex justify-end gap-1">
 				<motion.div variants={fadeItemVariants}>
-					<Button
-						variant="outline-fill"
-						size="icon-sm"
-						nativeButton={false}
-						render={
-							<a
-								href="#top"
-								data-transition-ignore="true"
-								aria-label="To the top!"
-								title="To the top!"
-							>
-								<Icon icon="mdi:arrow-collapse-up" />
-							</a>
-						}
-					/>
+					<a
+						href="#top"
+						data-transition-ignore="true"
+						aria-label="To the top!"
+						title="To the top!"
+						className={buttonVariantsCn({
+							variant: 'outline-fill',
+							size: 'icon-sm',
+							hasUnderline: true
+						})}
+					>
+						<Icon icon="mdi:arrow-collapse-up" />
+					</a>
 				</motion.div>
 				<motion.div variants={fadeItemVariants}>
 					<ViewModeToggle />

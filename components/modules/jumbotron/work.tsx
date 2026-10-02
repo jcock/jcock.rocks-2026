@@ -6,7 +6,7 @@ import type { Variants } from 'motion/react';
 
 import Jumbotron from '~/components/modules/jumbotron';
 import Grid from '~/components/modules/grid';
-import { Button } from '~/components/modules/core/button';
+import { buttonVariantsCn } from '~/components/modules/core/button';
 import Icon from '~/components/modules/icon';
 
 import { useScrollDirection } from '~/hooks/useScrollDirection';
@@ -107,18 +107,19 @@ const JumbotronWork = ({
 						)}
 						{siteUrl && (
 							<motion.div variants={fadeUpItemVariants}>
-								<Button
-									nativeButton={false}
-									variant="link"
-									size="link"
-									className="uppercase text-muted-foreground"
-									render={
-										<a href={siteUrl} target="_blank" rel="noreferrer">
-											<Icon icon="mdi:external-link" size="size-3.5" />
-											Visit
-										</a>
-									}
-								/>
+								<a
+									href={siteUrl}
+									target="_blank"
+									rel="noreferrer"
+									className={buttonVariantsCn({
+										variant: 'link',
+										size: 'link',
+										className: 'uppercase text-muted-foreground'
+									})}
+								>
+									<Icon icon="mdi:external-link" size="size-3.5" />
+									Visit
+								</a>
 							</motion.div>
 						)}
 					</motion.div>

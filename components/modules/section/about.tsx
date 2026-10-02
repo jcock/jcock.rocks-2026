@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 import Section from '~/components/modules/section';
 import Grid from '~/components/modules/grid';
-import { Button } from '~/components/modules/core/button';
+import { buttonVariantsCn } from '~/components/modules/core/button';
 import Icon from '~/components/modules/icon';
 import List from '~/components/modules/text/list';
 
@@ -70,21 +70,18 @@ const SectionAbout = ({ className }: SectionAboutProps) => {
 									Developer, Project Manager, Digital Strategist, and all-around
 									solver of problems. I reside in Delaware and work as part of
 									the digital team at{' '}
-									<Button
-										variant="link"
-										size="link"
-										hasUnderline
-										nativeButton={false}
-										render={
-											<a
-												href="https://abccreative.com"
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												AB&C
-											</a>
-										}
-									/>
+									<a
+										href="https://abccreative.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										className={buttonVariantsCn({
+											variant: 'link',
+											size: 'link',
+											hasUnderline: true
+										})}
+									>
+										AB&C
+									</a>
 									.
 								</p>
 								<p className="mb-8">
@@ -96,30 +93,27 @@ const SectionAbout = ({ className }: SectionAboutProps) => {
 									them.
 								</p>
 
-								<Button
-									nativeButton={false}
-									variant="outline"
-									className="not-prose"
-									render={
-										<a
-											href="/documents/Jason.Cockerham_Designer_Developer_Resume.pdf"
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											Download CV
-											<span className="relative">
-												<Icon
-													icon="ph:file-pdf"
-													className="transition group-hover/button:-translate-y-full group-hover/button:opacity-0"
-												/>
-												<Icon
-													icon="ph:download-simple"
-													className="absolute top-px inset-x-0 translate-y-full opacity-0 transition group-hover/button:translate-y-0 group-hover/button:opacity-100"
-												/>
-											</span>
-										</a>
-									}
-								/>
+								<a
+									href="/documents/Jason.Cockerham_Designer_Developer_Resume.pdf"
+									target="_blank"
+									rel="noopener noreferrer"
+									className={buttonVariantsCn({
+										variant: 'outline',
+										className: 'not-prose'
+									})}
+								>
+									Download CV
+									<span className="relative">
+										<Icon
+											icon="ph:file-pdf"
+											className="transition group-hover/button:-translate-y-full group-hover/button:opacity-0"
+										/>
+										<Icon
+											icon="ph:download-simple"
+											className="absolute top-px inset-x-0 translate-y-full opacity-0 transition group-hover/button:translate-y-0 group-hover/button:opacity-100"
+										/>
+									</span>
+								</a>
 							</motion.div>
 						</Grid.Item>
 						<Grid.Item className="order-first lg:order-last">
