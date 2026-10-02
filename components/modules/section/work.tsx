@@ -32,7 +32,7 @@ const SectionWork = ({
 	id = 'work',
 	className,
 	title,
-	eagerImageCount = 0,
+	eagerImageCount = 2,
 	samples
 }: SectionWorkProps) => {
 	const scrollDirection = useScrollDirection();
