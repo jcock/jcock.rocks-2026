@@ -44,6 +44,7 @@ const SectionAbout = ({ className }: SectionAboutProps) => {
 		<>
 			<Section
 				id="intro"
+				track={false}
 				className={`grid items-center px-8 md:px-16 pt-24 sm:pt-56 md:pt-64 pb-20 space-y-32 ${className ?? ''}`}
 			>
 				<motion.div

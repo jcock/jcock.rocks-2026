@@ -1,51 +1,40 @@
 'use client';
 
-import type { ComponentProps, ElementType, ReactNode } from 'react';
-import { InView } from 'react-intersection-observer';
+import { useCallback } from 'react';
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 
 import { cn } from '~/lib/utils';
 
 import useSectionTracker from '~/hooks/useSectionTracker';
 
-const isBrowser = typeof window !== 'undefined';
-
-type InViewComponentProps = ComponentProps<typeof InView>;
-
-type SectionProps = Omit<InViewComponentProps, 'onChange'> & {
-	children?: ReactNode;
-	className?: string;
-	onChange?: InViewComponentProps['onChange'];
-	id?: string;
+type SectionProps = ComponentPropsWithoutRef<'section'> & {
+	track?: boolean;
 };
 
-const Section = ({ children, className, onChange, ...props }: SectionProps) => {
-	const sectionIsIntersecting = useSectionTracker();
-
-	const handleChange: InViewComponentProps['onChange'] = (inView, entry) => {
-		if (inView) {
-			if (entry.intersectionRatio > 0 && sectionIsIntersecting) {
-				sectionIsIntersecting(
-					entry.target.id,
-					entry.intersectionRatio,
-					(entry.intersectionRatio * entry.boundingClientRect.height) /
-						(isBrowser ? window.innerHeight : 1)
-				);
-			}
-		}
-
-		onChange?.(inView, entry);
-	};
+const Section = ({
+	children,
+	className,
+	id,
+	track = true,
+	...props
+}: SectionProps) => {
+	const { registerSection } = useSectionTracker();
+	const sectionRef = useCallback(
+		(element: HTMLElement | null) => {
+			if (element && id && track) return registerSection(id, element);
+		},
+		[id, track, registerSection]
+	);
 
 	return (
-		<InView
-			as="section"
-			threshold={[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]}
-			onChange={handleChange}
+		<section
+			ref={sectionRef}
+			id={id}
 			className={`scroll-mt-20 ${className ?? ''}`}
 			{...props}
 		>
 			{children}
-		</InView>
+		</section>
 	);
 };
 

@@ -53,9 +53,14 @@ const Footer = () => {
 						size="icon-sm"
 						nativeButton={false}
 						render={
-							<Link href="#top" aria-label="To the top!" title="To the top!">
+							<a
+								href="#top"
+								data-transition-ignore="true"
+								aria-label="To the top!"
+								title="To the top!"
+							>
 								<Icon icon="mdi:arrow-collapse-up" />
-							</Link>
+							</a>
 						}
 					/>
 				</motion.div>
