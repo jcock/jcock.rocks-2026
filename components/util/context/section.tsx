@@ -10,7 +10,6 @@ import {
 } from 'react';
 import type { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
-import { useTransitionState } from 'next-transition-router';
 
 import {
 	createSectionTracker,
@@ -36,7 +35,6 @@ export const SectionContext = createContext<SectionContextValue | null>(null);
 
 export const SectionProvider = ({ children }: { children: ReactNode }) => {
 	const pathname = usePathname();
-	const { stage } = useTransitionState();
 	// The layout persists between routes, but each page gets a fresh registry and
 	// tracker lifetime (including analytics deduplication and owned bookmarks).
 	const registry = useMemo(
@@ -92,14 +90,6 @@ export const SectionProvider = ({ children }: { children: ReactNode }) => {
 			trackerRef.current = null;
 		};
 	}, [pathname, sections]);
-
-	useEffect(() => {
-		// Use the site's actual transition lifecycle, with no timed suppression.
-		// Completion (including a return to the same page) starts fresh settling.
-		if (stage !== 'none')
-			trackerRef.current?.startNavigation('page-transition');
-		else trackerRef.current?.finishNavigation('page-transition');
-	}, [stage, pathname]);
 
 	const registerSection = useCallback(
 		(id: string, element: HTMLElement) =>
