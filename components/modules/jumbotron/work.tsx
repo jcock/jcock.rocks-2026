@@ -1,6 +1,7 @@
 'use client';
 
-import * as React from 'react';
+import { useRef, ViewTransition } from 'react';
+import type { ImageProps } from 'next/image';
 import { motion, useInView } from 'motion/react';
 import type { Variants } from 'motion/react';
 
@@ -16,6 +17,8 @@ const MotionJumbotron = motion.create(Jumbotron);
 const MotionTitle = motion.create(Jumbotron.Title);
 
 interface JumbotronWorkProps {
+	slug: string;
+	image: ImageProps['src'];
 	title: string;
 	summary: string;
 	client: string;
@@ -26,6 +29,8 @@ interface JumbotronWorkProps {
 }
 
 const JumbotronWork = ({
+	slug,
+	image,
 	title,
 	summary,
 	client,
@@ -33,7 +38,7 @@ const JumbotronWork = ({
 	roles,
 	color
 }: JumbotronWorkProps) => {
-	const ref = React.useRef<HTMLDivElement | null>(null);
+	const ref = useRef<HTMLDivElement | null>(null);
 	const isInView = useInView(ref, { once: false });
 	const scrollDirection = useScrollDirection();
 
@@ -54,6 +59,9 @@ const JumbotronWork = ({
 			animate={isInView ? 'show' : 'hidden'}
 			className="items-center font-sans"
 		>
+			<ViewTransition name={`work-image-${slug}`}>
+				<Jumbotron.Image image={image} alt={title} sizes="100vw" />
+			</ViewTransition>
 			<Jumbotron.Body className="px-[10dvw] py-[20dvh]">
 				<Grid columns="lg:grid-cols-2">
 					<Grid.Item>

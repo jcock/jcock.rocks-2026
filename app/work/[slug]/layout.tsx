@@ -30,6 +30,8 @@ const WorkSampleLayout = async ({
 	return (
 		<div>
 			<JumbotronWork
+				slug={sample.slug}
+				image={sample.metadata.featuredImage}
 				title={sample.metadata.title}
 				summary={sample.metadata.summary}
 				siteUrl={sample.metadata.siteUrl}

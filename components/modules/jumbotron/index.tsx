@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef } from 'react';
-import Image, { type StaticImageData } from 'next/image';
+import Image, { type ImageProps } from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
 type JumbotronProps = HTMLAttributes<HTMLElement> & {
@@ -39,7 +39,7 @@ export const JumbotronBody = ({
 	return (
 		<div
 			className={twMerge(
-				'md:row-span-full col-span-full grid relative z-10 container p-4',
+				'row-span-full col-span-full grid relative z-10 container p-4',
 				className ?? ''
 			)}
 			{...rest}
@@ -75,7 +75,7 @@ type JumbotronImageProps = Omit<
 	React.ComponentPropsWithoutRef<typeof Image>,
 	'src' | 'alt'
 > & {
-	image: StaticImageData;
+	image: ImageProps['src'];
 	alt?: string;
 	className?: string;
 	containerClassName?: string;
@@ -91,18 +91,18 @@ export const JumbotronImage = ({
 	return (
 		<div
 			className={twMerge(
-				'relative order-first md:order-last row-span-full col-span-full',
+				'relative order-last row-span-full col-span-full h-full',
 				containerClassName ?? ''
 			)}
 		>
+			<i className="absolute inset-0 z-1 bg-background/80 backdrop-blur-sm" />
 			<Image
-				src={image.src}
-				width={image.width}
-				height={image.height}
+				src={image}
 				alt={alt ?? ''}
+				fill
 				priority
 				className={twMerge(
-					'md:col-start-1 h-full w-full object-cover object-center opacity-70 md:opacity-20',
+					'col-start-1 h-full w-full object-cover object-center',
 					className ?? ''
 				)}
 				{...rest}

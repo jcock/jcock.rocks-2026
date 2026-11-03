@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import { useMemo, ViewTransition } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import type { Variants } from 'motion/react';
@@ -37,7 +37,7 @@ const SectionWork = ({
 }: SectionWorkProps) => {
 	const scrollDirection = useScrollDirection();
 
-	const sortedSamples = React.useMemo(
+	const sortedSamples = useMemo(
 		() =>
 			[...samples].sort((a, b) => {
 				if (
@@ -95,26 +95,36 @@ const SectionWork = ({
 									className="relative pt-0"
 								>
 									<div className="aspect-4/3 overflow-hidden">
-										<CardImage
-											src={sample.metadata.featuredImage}
-											width={720}
-											height={540}
-											sizes="(min-width: 768px) 50vw, 100vw"
-											loading={index < eagerImageCount ? 'eager' : 'lazy'}
-											alt=""
-											className="w-full h-full object-cover object-center bg-white transition-transform duration-400 group-hover/card:scale-105"
-										/>
+										<ViewTransition name={`work-image-${sample.slug}`}>
+											<CardImage
+												src={sample.metadata.featuredImage}
+												width={720}
+												height={540}
+												sizes="(min-width: 768px) 50vw, 100vw"
+												loading={index < eagerImageCount ? 'eager' : 'lazy'}
+												alt=""
+												className="w-full h-full object-cover object-center bg-white transition-transform duration-400 group-hover/card:scale-105"
+											/>
+										</ViewTransition>
 									</div>
 									<CardContent className="px-0">
-										<CardTitle
-											as={title ? 'h3' : 'h2'}
-											className="mb-2 text-foreground/75 dark:text-foreground/75 transition-colors group-hover/card:text-foreground dark:group-hover/card:text-foreground"
+										<ViewTransition
+											name={`work-title-${sample.slug}`}
+											share="title"
+											default="none"
 										>
-											{sample.metadata.title}
-										</CardTitle>
-										<CardDescription className="text-xs font-sans text-pretty opacity-75 transition-opacity duration-400 group-hover/card:opacity-100">
-											{sample.metadata.client}
-										</CardDescription>
+											<CardTitle
+												as={title ? 'h3' : 'h2'}
+												className="mb-2 text-foreground/75 dark:text-foreground/75 transition-colors group-hover/card:text-foreground dark:group-hover/card:text-foreground"
+											>
+												{sample.metadata.title}
+											</CardTitle>
+										</ViewTransition>
+										<ViewTransition name={`work-client-${sample.slug}`}>
+											<CardDescription className="text-xs font-sans text-pretty opacity-75 transition-opacity duration-400 group-hover/card:opacity-100">
+												{sample.metadata.client}
+											</CardDescription>
+										</ViewTransition>
 									</CardContent>
 								</Card>
 							</motion.li>
