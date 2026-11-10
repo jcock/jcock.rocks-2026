@@ -101,7 +101,7 @@ const SectionWork = ({
 											height={540}
 											sizes="(min-width: 768px) 50vw, 100vw"
 											loading={index < eagerImageCount ? 'eager' : 'lazy'}
-											alt=""
+											alt={`Featured image for ${sample.metadata.title}`}
 											className="w-full h-full object-cover object-center bg-white transition-transform duration-400 group-hover/card:scale-105"
 										/>
 									</div>
