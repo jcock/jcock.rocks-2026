@@ -18,6 +18,7 @@ const nextConfig = {
 	allowedDevOrigins: ['127.0.0.1'],
 	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 	experimental: {
+		agentUpgrade: 'security',
 		scrollRestoration: true
 	},
 	images: {
